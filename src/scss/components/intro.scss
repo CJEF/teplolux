@@ -1,0 +1,60 @@
+.intro {
+    background-image: url('../img/intro-bg.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    padding-bottom: 140px;
+    &__description {
+        max-width: 240px;
+        position: relative;
+        color: #fff;
+        font-size: 13px;
+        line-height: 14px;
+        z-index: 1;
+        margin: 0 0 45px;
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: $blue;
+            width: 532px;
+            height: 43px;
+            top: -7px;
+            right: -10px;
+            z-index: -1;
+        }
+    }
+    &__title {
+        max-width: 643px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    &-info {
+        display: flex;
+        align-items: center;
+        max-width: 600px;
+        flex-wrap: wrap;
+        &__item {
+            display: flex;
+            align-items: center;
+        }
+        &__item:not(:last-child) {
+            margin-bottom: 23px;
+        }
+        &__item:nth-child(1) &__text {
+            max-width: 215px;
+        }
+        &__item:nth-child(2) {
+            margin-left: 50px;
+        }
+        &__item:nth-child(2) &__text {
+            max-width: 195px;
+        }
+        &__text {
+            display: inline-flex;
+            margin-left: 20px;
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+}
