@@ -1,0 +1,29 @@
+.price {
+    padding: 24px 0 27px;
+    background-color: $blue;
+    background-image: url(../img/download-bg.svg);
+    // background-size: cover;
+    background-repeat: no-repeat;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__text {
+        font-size: 18px;
+        line-height: 32px;
+        color: #fff;
+    }
+    &__title {
+        color: #fff;
+        margin: 0;
+        font-family: 'Montserrat-Bold';
+        font-size: 32px;
+        line-height: 39px;
+    }
+    &__condition {
+        font-size: 11px;
+        line-height: 12px;
+        color: #fff;
+    }
+}

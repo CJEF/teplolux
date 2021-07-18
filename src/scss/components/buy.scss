@@ -1,0 +1,52 @@
+.buy {
+  background-color: $catskillWhite;
+  padding: 60px 0 54px;
+  &__left {
+      width: 60%;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    margin: 0 0 10px;
+  }
+  &__subtitle {
+    margin: 0 0 25px;
+  }
+  &__text-caption {
+    font-family: "Montserrat-Medium";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 10px;
+    display: inline-block;
+  }
+  &__text {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+    + .buy__text {
+      margin-top: 10px;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    &__input {
+      width: 100%;
+    }
+    .input-label + .input-label {
+      margin-top: 20px;
+    }
+    &__btn {
+      max-width: 270px;
+      margin-top: 20px;
+    }
+  }
+  &__agreement {
+    margin: 25px 0 0;
+  }
+}

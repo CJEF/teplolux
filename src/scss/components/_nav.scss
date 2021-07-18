@@ -1,0 +1,51 @@
+.nav {
+    position: fixed;
+    // top: 0;
+    // left: 0;
+    width: 100px;
+    height: 100%;
+    padding: 10px 0;
+
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(111, 135, 157, 0.2);
+    z-index: 1000;
+    &-wrapper {
+        position: absolute;
+        width: 100px;
+        height: 100%;
+    }
+    &__link {
+        width: 70px;
+        height: 70px;
+        background-color: $catskillWhite;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        stroke: $blue;
+        transition: .1s ease-in;
+        &:hover {
+            color: #fff;
+            stroke: #fff;
+            background-color: $blue;
+            path {
+                color: #fff !important;
+                stroke: #fff !important;
+            }
+        }
+    }
+    &__item {
+        margin: 35px auto;
+        // padding: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            max-width: 40px;
+            max-height: 40px;
+            path:hover {
+                stroke: #fff;
+            }
+        }
+    }
+}

@@ -1,20 +1,25 @@
 <section class="buy">
-    <div class="container">
+    <div class="container buy__inner">
         <div class="buy__left">
             <h2 class="buy__title title">Хотите купить кондиционер недорого</h2>
             <h3 class="buy__subtitle subtitle">в Караганде для дома или офиса?</h3>
-            <span class="buy__text">в Караганде для дома или офиса?</span>
-            <p class="buy__text text--small">В течении 15 минут в рабочее время мы перезвоним и подберем кондиционер, исходя из ваших потребностей. Предоставим
+            <span class="buy__text-caption">Оставьте свои контактные данные в форме справа!
+            </span>
+            <p class="buy__text">В течении 15 минут в рабочее время мы перезвоним и подберем кондиционер, исходя из ваших потребностей. Предоставим
             перечень подрядных монтажных организаций.</p>
-            <p class="buy__text text--small">Если на часах больше 18:00, оставляйте заявку и мы перезвоним вам завтра.</p>
+            <p class="buy__text">Если на часах больше 18:00, оставляйте заявку и мы перезвоним вам завтра.</p>
         </div>
         <form class="buy__form buy-form" action="mail.php">
-            <input name="name" type="text" class="buy-form__input form-input" placeholder="Имя*">
-            <input name="number" type="number" class="buy-form__input form-input" placeholder="Телефон*">
-            <button class="btn btn-reset btn--blue" type="submit">Заказать</button>
-            <p class="buy__agreement">Нажав кнопку &laquo;Заказать&raquo;, я&nbsp;даю согласие на&nbsp;обработку моих персональных данных и&nbsp;получение
-            рекламы. С&nbsp;условиями обработки персональных данных и&nbsp;получения рекламы&nbsp;&mdash; ознакомлен
-            и&nbsp;согласен.</p>
+            <label class="input-label">
+                <input name="name" type="text" class="buy-form__input input" required>
+                <span class="input-span">Имя*</span>
+            </label>
+            <label class="input-label">
+                <input name="number" type="number" class="buy-form__input input" required>
+                <span class="input-span">Телефон*</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--big buy-form__btn" type="submit">Заказать</button>
+            <p class="buy__agreement agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#" class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных данных и получения рекламы - ознакомлен и согласен.</p>
         </form>
     </div>
 </section>

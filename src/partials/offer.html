@@ -2,8 +2,46 @@
     <div class="offer__inner">
         <h2 class="offer__title title">Спецпредложение</h2>
         <h3 class="offer__subtitle offer__subtitle">Кондиционеры в рассрочку от Kaspi Red!</h3>
-        <div class="offer__row">
-            
+        <div class="offer__row offer-row">
+            <div class="offer__column offer-column">
+                <div class="offer-column__icon">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#offer-1-step"></use>
+                    </svg>
+                </div>
+                <div class="offer-column__info">
+                    <h4 class="offer-column__title">Оставьте заявку</h4>
+                    <div class="offer-column__text">мы вам перезвоним и проконсультируем, поможем в выборе</div>
+                </div>
+            </div>
+            <div class="offer__column offer-column">
+                <div class="offer-column__icon">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#offer-2-step"></use>
+                    </svg>
+                </div>
+                <div class="offer-column__info">
+                    <h4 class="offer-column__title">Забираете товар</h4>
+                    <div class="offer-column__text">вы приходите и забираете товар, в любое удобное для вас время</div>
+                </div>
+            </div>
+            <div class="offer__column offer-column">
+                <svg class="kaspi-logo">
+                    <use xlink:href="img/sprite.svg#kaspi-logo"></use>
+                </svg>
+            </div>
         </div>
+        <form action="/" class="offer__row offer-form">
+            <label class="input-label offer-form__label">
+                <input type="text" class="offer-form__input input" required>
+                <span class="input-span">Имя*</span>
+            </label>
+            <label class="input-label offer-form__label">
+                <input type="number" class="offer-form__input input" required>
+                <span class="input-span">Телефон*</span>
+            </label>
+            <button class="btn btn-reset btn--sm btn--blue offer-form__btn" type="submit">Заказать</button>  
+        </form>
+        <p class="offer-form__text agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#" class="offer-form__data agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных данных и получения рекламы - ознакомлен и согласен.</p>
     </div>
 </section>

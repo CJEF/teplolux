@@ -27,7 +27,7 @@ const clean = () => {
 
 //svg sprite
 const svgSprites = () => {
-  return src('./src/img/svg/**.svg')
+  return src('./src/img/svg/**/*.svg')
     .pipe(svgSprite({
       mode: {
         stack: {

@@ -6,23 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#2580d2">
   <title>New site</title>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 </head>
 
 <body>
   <div class="site-container">
-    <!-- @include('partials/nav.html') -->
+    @include('partials/nav.html')
     @include('partials/intro.html')
     @include('partials/price.html')
     @include('partials/catalog.html')
-    @include('partials/advantages.html')
+    <!-- @include('partials/advantages.html') -->
+    @include('partials/offer.html')
+    @include('partials/buy.html')
     @include('partials/footer.html')
   </div>
   <script src="js/vendor.js"></script>
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 
