@@ -1,0 +1,57 @@
+.footer {
+    background-color: $black;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__text {
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        max-width: 270px;
+        margin: 0;
+    }
+    &-agreement {
+        display: flex;
+        align-items: center;
+        &__link {
+            font-size: 16px;
+            line-height: 20px;
+            color: $blue;
+            text-decoration: underline;
+            max-width: 240px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.site-developer {
+    display: flex;
+    align-items: center;
+    &__info {
+        display: inline-flex;
+    }
+    &__text {
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0;
+        max-width: 170px;
+    }
+    &__link {
+        color: $blue;
+        text-decoration: underline;
+        font-size: 16px;
+        line-height: 20px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .proseo {
+        max-width: 100px;
+        height: auto;
+    }
+}

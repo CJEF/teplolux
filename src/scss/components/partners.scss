@@ -1,0 +1,23 @@
+.partners {
+    padding: 80px 0;
+    &__list {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        margin: 0;
+    }
+    &__item {
+        margin: 0 45px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        svg {
+            max-height: 30px;
+            max-width: 245px;
+            width: 100%;
+        }
+    }
+}

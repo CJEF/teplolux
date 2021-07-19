@@ -1,7 +1,5 @@
 .nav {
     position: fixed;
-    // top: 0;
-    // left: 0;
     width: 100px;
     height: 100%;
     padding: 10px 0;
@@ -15,8 +13,8 @@
         height: 100%;
     }
     &__link {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         background-color: $catskillWhite;
         border-radius: 50%;
         display: flex;
@@ -41,8 +39,8 @@
         align-items: center;
         justify-content: center;
         svg {
-            max-width: 40px;
-            max-height: 40px;
+            max-width: 30px;
+            max-height: 30px;
             path:hover {
                 stroke: #fff;
             }

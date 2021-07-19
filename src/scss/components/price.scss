@@ -1,5 +1,5 @@
 .price {
-    padding: 24px 0 27px;
+    padding: 32px 0 35px;
     background-color: $blue;
     background-image: url(../img/download-bg.svg);
     // background-size: cover;
@@ -25,5 +25,21 @@
         font-size: 11px;
         line-height: 12px;
         color: #fff;
+        margin: 0;
+    }
+
+    &__left {
+        position: relative;
+        padding-right: 88px;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../img/arrow-right.svg);
+            top: 60%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 83px;
+            height: 52px;
+        }
     }
 }

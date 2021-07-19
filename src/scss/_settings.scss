@@ -46,7 +46,7 @@ input[type=number] {
 
 .input {
   position: relative;
-  padding: 20px 10px 9px;
+  padding: 19px 10px 10px;
   font-size: 16px;
   line-height: 20px;
   color: $blue;
@@ -68,11 +68,10 @@ input[type=number] {
 }
 
 .input:focus ~ .input-span, .input:valid ~ .input-span {
-  top: 0;
-  transform: none;
+  transform: translateY(-24px);
   font-size: 11px;
   color: $blue;
-} 
+}
 
 .is-outer {
   position: relative !important; // stylelint-disable-line declaration-no-important
@@ -174,4 +173,10 @@ h3.subtitle {
     text-decoration: underline;
     color: $black;
   }
+}
+
+.address {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
 }

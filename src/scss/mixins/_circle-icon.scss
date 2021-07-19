@@ -1,0 +1,9 @@
+@mixin circle-icon {
+    width: 50px;
+    height: 50px;
+    background-color: $catskillWhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
