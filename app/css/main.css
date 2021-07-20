@@ -222,6 +222,8 @@
   font-size: 16px;
   line-height: 20px;
   color: #2580d2; }
+  .catalog-tab__more:hover {
+    text-decoration: underline; }
 
 .catalog-article {
   padding: 40px 30px 35px;
@@ -262,6 +264,8 @@
     top: -2px;
     left: 0;
     font-size: 20px; }
+  .article-footer__detail-btn:hover {
+    text-decoration: underline; }
   .article-footer__detail-btn:hover span {
     -webkit-animation-duration: .2s;
     animation-duration: .2s;
@@ -593,8 +597,7 @@
     transform: translateY(-26px); }
   .questions-form__btn {
     min-height: 51px;
-    min-width: 170px;
-    border: 1px solid #2580d2; }
+    min-width: 170px; }
 
 .footer {
   background-color: #212121; }

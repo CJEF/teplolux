@@ -686,14 +686,18 @@ input[type=number] {
 .btn--black {
   background: #212121;
   color: #fff;
-  transition: color 0.2s ease-in; }
+  transition: color 0.2s ease-in;
+  border: 2px solid #212121;
+  transition: background .2s ease-in-out,  color .2s ease-in-out; }
   .btn--black:hover {
-    color: #2580d2; }
+    color: #212121;
+    background-color: #fff; }
 
 .btn--blue {
   background: #2580d2;
   color: #fff;
-  transition: color 0.2s ease-in , background-color 0.2s ease-in; }
+  transition: color 0.2s ease-in , background-color 0.2s ease-in;
+  border: 2px solid #2580d2; }
   .btn--blue:hover {
     color: #2580d2;
     background-color: #fff; }

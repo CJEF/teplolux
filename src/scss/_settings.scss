@@ -137,14 +137,18 @@ input[type=number] {
   background: $black;
   color: #fff;
   transition: color 0.2s ease-in;
+  border: 2px solid $black;
+  transition: background .2s ease-in-out,  color .2s ease-in-out;
   &:hover {
-    color: $blue;
+    color: $black;
+    background-color: #fff;
   }
 }
 .btn--blue {
   background: $blue;
   color: #fff;
   transition: color 0.2s ease-in , background-color 0.2s ease-in;
+  border: 2px solid $blue;
   &:hover {
     color: $blue;
     background-color: #fff;

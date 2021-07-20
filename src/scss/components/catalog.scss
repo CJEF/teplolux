@@ -53,6 +53,9 @@
         font-size: 16px;
         line-height: 20px;
         color: $blue;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -102,6 +105,9 @@
             top: -2px;
             left: 0;
             font-size: 20px;
+        }
+        &:hover {
+            text-decoration: underline;
         }
         &:hover span {
             animation-duration: .2s;
