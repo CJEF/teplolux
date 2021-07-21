@@ -11,6 +11,7 @@
         position: absolute;
         width: 100px;
         height: 100%;
+        z-index: 998;
     }
     &__link {
         width: 60px;
@@ -31,6 +32,25 @@
                 stroke: #fff !important;
             }
         }
+    }
+    &__link-phone {
+        background-color: $blue;
+        transition: background-color .2s ease-in-out;
+        color: #fff;
+        border: 2px solid $blue;
+
+        svg {
+            color: #fff;
+            fill: #fff;
+        }
+        &:hover {
+            background-color: $catskillWhite;
+            svg {
+                stroke: $blue;
+                fill: $blue;
+            }
+        }
+
     }
     &__item {
         margin: 35px auto;

@@ -54,3 +54,5 @@ detailBtn.forEach(function(btn) {
     }
   });
 })
+
+

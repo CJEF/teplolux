@@ -15,14 +15,21 @@
     &-agreement {
         display: flex;
         align-items: center;
-        &__link {
+        &__btn {
+            font-family: "Montserrat-Regular", sans-serif;
+            font-weight: 400;
             font-size: 16px;
             line-height: 20px;
             color: $blue;
             text-decoration: underline;
+            text-align: left;
+            padding: 0;
             max-width: 240px;
+            color: #fff;
+            text-decoration-color: #fff;
+            transition: text-decoration .2s ease-in-out;
             &:hover {
-                text-decoration: none;
+                text-decoration-color: transparent;
             }
         }
     }
@@ -46,8 +53,10 @@
         text-decoration: underline;
         font-size: 16px;
         line-height: 20px;
+        text-decoration-color: $blue;
+        transition: text-decoration .2s ease-in-out;
         &:hover {
-            text-decoration: none;
+            text-decoration-color: transparent;
         }
     }
     .proseo {

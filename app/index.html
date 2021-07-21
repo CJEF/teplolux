@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 </head>
 
 <body>
@@ -68,7 +67,7 @@
                 </a>
             </li>
             <li class="nav__item">
-                <a href="#footer" class="nav__link">
+                <a href="#questions-bottom" class="nav__link nav__link-phone">
                     <svg>
                         <use xlink:href="img/sprite.svg#menu-phone">
                         </use>
@@ -94,7 +93,7 @@
                 <a href="tel:+77212911010" class="header-info__number">+7 (7212) 91 10 10</a>
                 <a href="tel:+77017958446" class="header-info__number">+7 (701) 795 84 46</a>
             </div>
-            <button class="btn btn--black btn--sm btn-reset header-info__btn">Обратный звонок</button>
+            <button class="btn btn--black btn--sm btn-reset header-info__btn" data-modal="modal-callback">Обратный звонок</button>
         </div>
     </div>
 </header>
@@ -130,7 +129,7 @@
             <p class="price__condition">* необходимо только остаивть ваш e-mail адрес</p>
         </div>
         <div class="price__right">
-            <a href="price.html" class="btn btn-reset btn--black btn--big">Скачать прайс-лист</a>
+            <button class="btn btn-reset btn--black btn--big price__btn" data-modal="modal-email">Скачать прайс-лист</button>
         </div>
     </div>
 </section>
@@ -231,7 +230,7 @@
               </div>
             </div>
             <div class="catalog-article__footer article-footer">
-              <button class="btn btn-reset btn--blue btn--big article-footer__btn">Оставить заявку</button>
+              <button class="btn btn-reset btn--blue btn--big article-footer__btn" data-modal="modal-request">Оставить заявку</button>
               <button class="btn btn-reset article-footer__detail-btn detail-btn-js" id="detailBtn">
                 <span>&#8592;</span> Детальная информация
               </button>
@@ -296,7 +295,7 @@
               </div>
             </div>
             <div class="catalog-article__footer article-footer">
-              <button class="btn btn-reset btn--blue btn--big article-footer__btn">Оставить заявку</button>
+              <button class="btn btn-reset btn--blue btn--big article-footer__btn" data-modal="modal-request">Оставить заявку</button>
               <button class="btn btn-reset article-footer__detail-btn detail-btn-js" id="detailBtn">
                 <span>&#8592;</span> Детальная информация
               </button>
@@ -361,7 +360,7 @@
               </div>
             </div>
             <div class="catalog-article__footer article-footer">
-              <button class="btn btn-reset btn--blue btn--big article-footer__btn">Оставить заявку</button>
+              <button class="btn btn-reset btn--blue btn--big article-footer__btn" data-modal="modal-request">Оставить заявку</button>
               <button class="btn btn-reset article-footer__detail-btn detail-btn-js" id="detailBtn">
                 <span>&#8592;</span> Детальная информация
               </button>
@@ -506,7 +505,7 @@
             </label>
             <button class="btn btn-reset btn--sm btn--blue offer-form__btn" type="submit">Заказать</button>
         </form>
-        <p class="offer-form__text agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#" class="offer-form__data agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных данных и получения рекламы - ознакомлен и согласен.</p>
+        <p class="offer-form__text agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <button class="btn btn-reset offer-form__data agreement__btn" data-modal="modal-agreement">персональных данных</button> и получение рекламы. С условиями обработки персональных данных и получения рекламы - ознакомлен и согласен.</p>
     </div>
 </section>
 
@@ -531,7 +530,7 @@
                 <span class="input-span">Телефон*</span>
             </label>
             <button class="btn btn-reset btn--blue btn--big buy-form__btn" type="submit">Заказать</button>
-            <p class="buy__agreement agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#" class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных данных и получения рекламы - ознакомлен и согласен.</p>
+            <p class="buy__agreement agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <button class="btn btn-reset agreement__btn" data-modal="modal-agreement">персональных данных</button> и получение рекламы. С условиями обработки персональных данных и получения рекламы - ознакомлен и согласен.</p>
         </form>
     </div>
 </section>
@@ -632,7 +631,7 @@
             </div>
         </div>
     </div>
-    <div class="questions__bottom questions-bottom">
+    <div class="questions__bottom questions-bottom" id="questions-bottom">
         <h3 class="questions-bottom__subtitle subtitle">Или заполните формы и мы вам перезвоним</h3>
         <form action="mail.php" class="questions-bottom__form questions-form">
             <label class="input-label questions-form__label">
@@ -657,7 +656,7 @@
         <p class="footer__text">
           Продажа кондиционеров и сплит систем в Караганде
         </p>
-        <a href="agreement.pdf" class="footer-agreement__link agreement">Политика конфиденциальности</a>
+        <button class="btn btn-reset footer-agreement__btn agreement__btn" data-modal="modal-agreement">Политика конфиденциальности</button>
       </div>
       <div class="footer__site-developer site-developer">
         <p class="site-developer__text">Разработка сайта <a href="https://proseogroup.ru/" class="site-developer__link" target="_blank" rel="nofollow">Proseogroup.ru</a></p>
@@ -668,11 +667,136 @@
       </div>
     </div>
 </footer>
+<a href="#intro" class="scroll-top">
+  <svg>
+    <use xlink:href="img/sprite.svg#scroll-top">
+    </use>
+  </svg>
+</a>
 
+    <div class="modal-form__overlay">
+    <div class="modal-form modal-callback" id="modal-callback">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title">Оставьте свой номер</h2>
+        <h3 class="modal-form__subtitle">и мы обязательно перезвоним</h3>
+        <form action="/" class="modal-form__inner">
+            <label class="input-label modal-form__label">
+                <input type="text" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Имя</span>
+            </label>
+            <label class="input-label modal-form__label">
+                <input type="number" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Телефон</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Перезвонить</button>
+        </form>
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#" class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
+            данных и получения рекламы - ознакомлен и согласен.
+        </p>
+    </div>
+</div>
+
+    <div class="modal-form__overlay">
+    <div class="modal-form modal-request" id="modal-request">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title">Оставьте заявку</h2>
+        <h3 class="modal-form__subtitle">и мы обязательно перезвоним</h3>
+        <div class="modal-product">
+            <div class="modal-product__preview">
+                <img src="../img/modal-product.jpg" alt="product" class="modal-product__img">
+            </div>
+            <div class="modal-product__info">
+                <h4 class="modal-product__title">Настенный кондиционер ALMACOM</h4>
+                <span class="modal-product__text">Серия <span class="modal-product__serial">INVERTER DIAMOND</span></span>
+                <span class="modal-product__cost">от <span>34 000</span> тг</span>
+            </div>
+        </div>
+        <form action="/" class="modal-form__inner">
+            <label class="input-label modal-form__label">
+                <input type="text" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Имя</span>
+            </label>
+            <label class="input-label modal-form__label">
+                <input type="number" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Телефон</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
+        </form>
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#"
+                class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
+            данных и получения рекламы - ознакомлен и согласен.
+        </p>
+    </div>
+</div>
+
+    <div class="modal-form__overlay">
+    <div class="modal-form modal-agreement" id="modal-agreement">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title modal-agreement__title">Политика конфиденциальности</h2>
+        <p class="modal-form__text modal-agreement__text">Данная Политика конфиденциальности применима к данному Сайту. После просмотра данного Сайта обязательно прочитайте
+        текст, содержащий политику конфиденциальности используемого сайта. В случае несогласия с данной Политикой
+        конфиденциальности прекратите использование данного Сайта. Заполнив любую из форм и используя данный Сайт, Вы тем самым
+        выражаете согласие с условиями изложенной ниже Политики конфиденциальности. Сайт охраняет конфиденциальность посетителей
+        сайта. Персональная информация Для того чтобы оказывать вам услуги, отвечать на вопросы, выполнять ваши пожелания и
+        требования требуется такая информация, как ваше имя и номер телефона. САЙТ может использовать указанную информацию для
+        ответов на запросы, а также для связи с Вами по телефону с целью предоставления информации о предлагаемых САЙТ услугах и
+        рекламных кампаниях. При поступлении от вас обращения в виде отправки любой заполненной на сайте формы САЙТ может
+        потребоваться связаться с Вами для получения дополнительной информации, необходимой для вашего обслуживания и ответа на
+        интересующие вопросы. САЙТ обязуется не передавать данную информацию третьим лицам без Вашего разрешения, за исключением
+        информации, необходимой для выполнения вашего обслуживания. Со своей стороны, Вы предоставляете САЙТ право использовать
+        любую сообщѐнную Вами информацию для выполнения указанных выше действий.
+        </p>
+        <h3 class="modal-form__subtitle modal-agreement__subtitle">Безопасность</h3>
+        <p class="modal-form__text modal-agreement__text">Передача персональных данных в любой форме (лично, по телефону или через Интернет) всегда связана с определенным риском,
+        поскольку не существует абсолютно надежных (защищенных от злонамеренных посягательств) систем, однако САЙТ принимает
+        необходимые адекватные меры для минимизации риска и предотвращения несанкционированного доступа, несанкционированного
+        использования и искажения Ваших персональных данных. Несовершеннолетние САЙТ не принимает никакой информации от лиц
+        моложе 18 лет без согласия их родителей или законных опекунов. Кроме того, лица моложе 18 лет не могут совершать
+        каких-либо покупок или иных юридических действий на данном Сайте без согласия родителей или законных опекунов, если это
+        не допускается законодательством Российской Федерации.
+        </p>
+        <h3 class="modal-form__subtitle modal-agreement__subtitle">Модификация</h3>
+        <p class="modal-form__text modal-agreement__text">САЙТ имеет право изменять данную Политику конфиденциальности, изменять и корректировать условия доступа или запрещать
+        доступ к сайту, а также изменять его содержание в любое время без предварительного уведомления.
+        </p>
+    </div>
+</div>
+
+    <div class="modal-form__overlay">
+    <div class="modal-form modal-email" id="modal-email">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title">Оставьте e-mail</h2>
+        <h3 class="modal-form__subtitle">и мы вышлем вам прайс-лист</h3>
+        <form action="/" class="modal-form__inner">
+            <label class="input-label modal-form__label">
+                <input type="email" class="modal-form__input input input--bordered" required>
+                <span class="input-span">E-mail</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
+        </form>
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#"
+                class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
+            данных и получения рекламы - ознакомлен и согласен.
+        </p>
+    </div>
+</div>
+
+    
   </div>
   <script src="js/vendor.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=976f84ae-3d4f-4bcf-8234-90f7935de4cc" type="text/javascript"></script>
-  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 

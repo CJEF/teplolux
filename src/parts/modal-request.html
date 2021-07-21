@@ -1,0 +1,35 @@
+<div class="modal-form__overlay">
+    <div class="modal-form modal-request" id="modal-request">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title">Оставьте заявку</h2>
+        <h3 class="modal-form__subtitle">и мы обязательно перезвоним</h3>
+        <div class="modal-product">
+            <div class="modal-product__preview">
+                <img src="../img/modal-product.jpg" alt="product" class="modal-product__img">
+            </div>
+            <div class="modal-product__info">
+                <h4 class="modal-product__title">Настенный кондиционер ALMACOM</h4>
+                <span class="modal-product__text">Серия <span class="modal-product__serial">INVERTER DIAMOND</span></span>
+                <span class="modal-product__cost">от <span>34 000</span> тг</span>
+            </div>
+        </div>
+        <form action="/" class="modal-form__inner">
+            <label class="input-label modal-form__label">
+                <input type="text" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Имя</span>
+            </label>
+            <label class="input-label modal-form__label">
+                <input type="number" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Телефон</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
+        </form>
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#"
+                class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
+            данных и получения рекламы - ознакомлен и согласен.
+        </p>
+    </div>
+</div>

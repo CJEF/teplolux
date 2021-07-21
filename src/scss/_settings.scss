@@ -54,6 +54,15 @@ input[type=number] {
   appearance: none;
   border: none;
   background-color: #fff;
+  outline: none;
+
+  &--bordered {
+    border: 2px solid $black;
+    outline: none;
+    &:focus, &:valid {
+      border-color: $blue;
+    }
+  }
 }
 
 .input-span {
@@ -87,6 +96,10 @@ input[type=number] {
 
 .is-hidden {
   display: none !important; // stylelint-disable-line declaration-no-important
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .for-mobile {
@@ -173,9 +186,16 @@ h3.subtitle {
 .agreement {
   font-size: 12px;
   line-height: 17px;
-  &__link {
+  &__btn {
     text-decoration: underline;
     color: $black;
+    padding: 0;
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-weight: 400;
+    transition: text-decoration .2s ease-in-out;
+    &:hover {
+      text-decoration-color: transparent;
+    }
   }
 }
 
@@ -183,4 +203,22 @@ h3.subtitle {
   font-style: normal;
   font-size: 16px;
   line-height: 20px;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 200px;
+  right: 290px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(111, 135, 157, 0.3);
+  svg {
+    width: 19px;
+  }
 }
