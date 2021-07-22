@@ -2,16 +2,28 @@
 
 .partners {
     padding: 80px 0;
+    @include tablet {
+        padding: 30px 0;
+    }
     &__list {
         display: flex;
         align-items: center;
         overflow: hidden;
         margin: 0;
+
+        @include tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
+
     &__item {
         margin: 0 45px;
         &:first-child {
             margin-left: 0;
+        }
+        @include tablet {
+            margin: 15px 45px;
         }
         &:last-child {
             margin-right: 0;

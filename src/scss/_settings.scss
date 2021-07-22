@@ -272,6 +272,10 @@ h3.subtitle {
 
 .back-main {
   padding: 80px 0;
+
+  @include tablet {
+    padding: 40px 0;
+  }
   &__info {
     display: flex;
     align-items: center;
@@ -318,6 +322,17 @@ h3.subtitle {
       height: 50px;
       background-repeat: no-repeat;
       background-position: center;
+
+      @include tablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include tablet {
+    font-size: 22px;
+    line-height: 22px;
+    padding-left: 40px;
     }
   }
 

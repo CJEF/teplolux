@@ -5,6 +5,13 @@
   padding: 60px 0 54px;
   &__left {
       width: 60%;
+
+      @include tablet {
+        margin-right: 12px;
+      }
+      @include mobile {
+        margin-right: 0;
+      }
   }
   &__inner {
     display: flex;

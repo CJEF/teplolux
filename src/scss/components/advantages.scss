@@ -19,7 +19,9 @@
     }
 
     &__column {
-        margin: 40px 0 30px;
+        @include mobile {
+            margin: 40px 0 30px;
+        }
     }
 
     &__title {
@@ -55,6 +57,10 @@
         display: block;
         height: 170px;
         margin: 0 auto;
+
+        @include tablet {
+            height: 140px;
+        }
     }
 
     &-item {
@@ -81,6 +87,9 @@
                 max-width: 30px;
                 max-height: 30px;
             }
+            @include tablet {
+                margin-right: 10px;
+            }
         }
         &__text {
             font-family: "Montserrat-Medium";
@@ -89,6 +98,9 @@
             line-height: 20px;
             max-width: 170px;
 
+            @include tablet {
+                max-width: 155px;
+            }
         }
     }
 

@@ -136,17 +136,20 @@
         transform: translateY(-50%); }
     .header-info__burger {
       display: none;
-      width: 50px;
-      height: 50px;
+      width: 35px;
+      height: 35px;
       background-color: #212121;
       border-radius: 50%;
       margin-left: 15px;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      flex-direction: column; }
       .header-info__burger span {
-        width: 11px;
+        width: 19px;
         height: 2px;
         background-color: #fff; }
+        .header-info__burger span:nth-child(2) {
+          margin: 3px 0; }
       @media (max-width: 1225px) {
         .header-info__burger {
           display: flex; } }
@@ -258,6 +261,10 @@
     font-family: 'Montserrat-Bold';
     font-size: 32px;
     line-height: 39px; }
+    @media (max-width: 1024px) {
+      .price__title {
+        font-size: 22px;
+        line-height: 22px; } }
   .price__condition {
     font-size: 11px;
     line-height: 12px;
@@ -484,8 +491,9 @@
         align-items: center; } }
   .advantages__list {
     margin: 0; }
-  .advantages__column {
-    margin: 40px 0 30px; }
+  @media (max-width: 767px) {
+    .advantages__column {
+      margin: 40px 0 30px; } }
   .advantages__title {
     text-align: center;
     margin: 0 0 20px; }
@@ -512,6 +520,9 @@
     display: block;
     height: 170px;
     margin: 0 auto; }
+    @media (max-width: 1024px) {
+      .advantages .air-conditioning {
+        height: 140px; } }
   .advantages-item {
     display: flex;
     align-items: center; }
@@ -534,12 +545,18 @@
       .advantages-item__icon svg {
         max-width: 30px;
         max-height: 30px; }
+      @media (max-width: 1024px) {
+        .advantages-item__icon {
+          margin-right: 10px; } }
     .advantages-item__text {
       font-family: "Montserrat-Medium";
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
       max-width: 170px; }
+      @media (max-width: 1024px) {
+        .advantages-item__text {
+          max-width: 155px; } }
 
 .custom-checkbox__field:checked + .custom-checkbox__content::after {
   opacity: 1; }
@@ -641,6 +658,12 @@
   padding: 60px 0 54px; }
   .buy__left {
     width: 60%; }
+    @media (max-width: 1024px) {
+      .buy__left {
+        margin-right: 12px; } }
+    @media (max-width: 767px) {
+      .buy__left {
+        margin-right: 0; } }
   .buy__inner {
     display: flex;
     justify-content: space-between; }
@@ -688,15 +711,25 @@
 
 .partners {
   padding: 80px 0; }
+  @media (max-width: 1024px) {
+    .partners {
+      padding: 30px 0; } }
   .partners__list {
     display: flex;
     align-items: center;
     overflow: hidden;
     margin: 0; }
+    @media (max-width: 1024px) {
+      .partners__list {
+        flex-wrap: wrap;
+        justify-content: center; } }
   .partners__item {
     margin: 0 45px; }
     .partners__item:first-child {
       margin-left: 0; }
+    @media (max-width: 1024px) {
+      .partners__item {
+        margin: 15px 45px; } }
     .partners__item:last-child {
       margin-right: 0; }
     .partners__item svg {
@@ -744,6 +777,10 @@
   justify-content: space-between;
   max-width: 1160px;
   margin: 0 auto; }
+  @media (max-width: 1024px) {
+    .questions-info {
+      flex-direction: column;
+      align-items: flex-start; } }
   .questions-info__column {
     display: flex;
     align-items: center; }

@@ -808,6 +808,9 @@ h3.subtitle {
 
 .back-main {
   padding: 80px 0; }
+  @media (max-width: 1024px) {
+    .back-main {
+      padding: 40px 0; } }
   .back-main__info {
     display: flex;
     align-items: center; }
@@ -850,6 +853,15 @@ h3.subtitle {
       height: 50px;
       background-repeat: no-repeat;
       background-position: center; }
+      @media (max-width: 1024px) {
+        .back-main__number::before {
+          width: 30px;
+          height: 30px; } }
+    @media (max-width: 1024px) {
+      .back-main__number {
+        font-size: 22px;
+        line-height: 22px;
+        padding-left: 40px; } }
   .back-main__btn {
     min-width: 310px;
     min-height: 50px;

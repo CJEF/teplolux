@@ -27,6 +27,11 @@
         font-family: 'Montserrat-Bold';
         font-size: 32px;
         line-height: 39px;
+
+        @include tablet {
+            font-size: 22px;
+            line-height: 22px;
+        }
     }
     &__condition {
         font-size: 11px;
