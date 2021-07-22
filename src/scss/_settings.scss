@@ -232,7 +232,7 @@ h3.subtitle {
   position: fixed;
   // bottom: 200px;
   // right: 290px;
-  bottom: 8%;
+  bottom: 16%;
   right: 10%;
   border-radius: 50%;
   width: 50px;
@@ -345,6 +345,9 @@ h3.subtitle {
     align-items: center;
     @include desktop-md {
       margin-top: 20px;
+    }
+    @include mobile-sm {
+      min-width: 100%;
     }
   }
 }

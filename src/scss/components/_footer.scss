@@ -6,6 +6,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include desktop-sm {
+            padding: 30px 15px 40px 15px;
+            align-items: flex-start;
+        }
+        @include mobile-sm {
+            flex-direction: column;
+        }
     }
     &__text {
         color: #fff;
@@ -13,10 +21,21 @@
         line-height: 20px;
         max-width: 270px;
         margin: 0;
+
+        @include desktop-sm {
+            margin-bottom: 10px;
+        }
+        @include mobile-sm {
+            margin-bottom: 20px;
+        }
     }
     &-agreement {
         display: flex;
         align-items: center;
+
+        @include mobile-sm {
+            margin: 13px 0 17px 0;
+        }
         &__btn {
             font-family: "Montserrat-Regular", sans-serif;
             font-weight: 400;
@@ -33,6 +52,14 @@
             &:hover {
                 text-decoration-color: transparent;
             }
+            @include mobile-sm {
+                max-width: max-content;
+            }
+        }
+
+        @include desktop-sm {
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 }
@@ -40,6 +67,15 @@
 .site-developer {
     display: flex;
     align-items: center;
+
+    @include desktop-sm {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    @include mobile-sm {
+        flex-direction: row;
+        align-items: center;
+    }
     &__info {
         display: inline-flex;
     }
@@ -49,6 +85,10 @@
         line-height: 20px;
         margin: 0;
         max-width: 170px;
+
+        @include desktop-sm {
+            margin-bottom: 10px;
+        }
     }
     &__link {
         color: $blue;
@@ -64,5 +104,9 @@
     .proseo {
         max-width: 100px;
         height: auto;
+
+        @include desktop-sm {
+            height: 60px;
+        }
     }
 }

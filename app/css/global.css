@@ -773,7 +773,7 @@ h3.subtitle {
 
 .scroll-top {
   position: fixed;
-  bottom: 8%;
+  bottom: 16%;
   right: 10%;
   border-radius: 50%;
   width: 50px;
@@ -872,5 +872,8 @@ h3.subtitle {
     @media (max-width: 1400px) {
       .back-main__btn {
         margin-top: 20px; } }
+    @media (max-width: 680px) {
+      .back-main__btn {
+        min-width: 100%; } }
 
 /*# sourceMappingURL=global.css.map */

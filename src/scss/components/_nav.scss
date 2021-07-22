@@ -1,75 +1,148 @@
 @import "../mixins";
 
 .nav {
-    position: fixed;
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  padding: 10px 0;
+
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(111, 135, 157, 0.2);
+  z-index: 1000;
+  transition: transform 0.2s ease-in-out;
+  will-change: transform;
+  transform: translateX(100%);
+
+  @include desktop-sm {
+    padding: 35px 30px;
+    width: 80%;
+    right: 0;
+    background-color: $blue;
+  }
+
+  &__list {
+      margin: 0;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__logo {
+      
+  }
+
+  &-item {
+    &__link {
+        color: #fff;
+        font-family: "Montserrat-Bold", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        display: inline-block;
+
+        + .nav-item__link {
+            margin-top: 7px;
+        }
+    }
+
+    &__icon {
+      width: 60px;
+      height: 60px;
+      background-color: $catskillWhite;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      stroke: $blue;
+      transition: 0.1s ease-in;
+
+      @include desktop-sm {
+        margin-right: 20px; 
+      }
+
+      &:hover {
+        color: #fff;
+        stroke: #fff;
+        background-color: $blue;
+        path {
+          color: #fff !important;
+          stroke: #fff !important;
+        }
+      }
+    }
+
+    &__info {
+      display: none;
+      flex-direction: column;
+
+      @include desktop-sm {
+        display: flex;
+      }
+    }
+  }
+
+  &-wrapper {
+    position: absolute;
     width: 100px;
     height: 100%;
-    padding: 10px 0;
+    z-index: 998;
 
-    background-color: #fff;
-    box-shadow: 0px 4px 20px rgba(111, 135, 157, 0.2);
-    z-index: 1000;
-    &-wrapper {
-        position: absolute;
-        width: 100px;
-        height: 100%;
-        z-index: 998;
+    @include desktop-sm {
+      width: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
 
-        @include desktop-sm {
-            display: none;
-        }
-    }
-    &__link {
-        width: 60px;
-        height: 60px;
-        background-color: $catskillWhite;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        stroke: $blue;
-        transition: .1s ease-in;
-        &:hover {
-            color: #fff;
-            stroke: #fff;
-            background-color: $blue;
-            path {
-                color: #fff !important;
-                stroke: #fff !important;
-            }
-        }
-    }
-    &__link-phone {
-        background-color: $blue;
-        transition: background-color .2s ease-in-out;
+    &-text {
         color: #fff;
-        border: 2px solid $blue;
-
-        svg {
-            color: #fff;
-            fill: #fff;
-        }
-        &:hover {
-            background-color: $catskillWhite;
-            svg {
-                stroke: $blue;
-                fill: $blue;
-            }
-        }
-
+        font-family: "Montserrat-Bold", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
     }
-    &__item {
-        margin: 35px auto;
-        // padding: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        svg {
-            max-width: 30px;
-            max-height: 30px;
-            path:hover {
-                stroke: #fff;
-            }
-        }
+  }
+  &__link-phone {
+    background-color: $blue;
+    transition: background-color 0.2s ease-in-out;
+    color: #fff;
+    border: 2px solid $blue;
+
+    svg {
+      color: #fff;
+      fill: #fff;
     }
+    &:hover {
+      background-color: $catskillWhite;
+      svg {
+        stroke: $blue;
+        fill: $blue;
+      }
+    }
+  }
+  &__item {
+    margin: 35px auto;
+    // padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      max-width: 30px;
+      max-height: 30px;
+      path:hover {
+        stroke: #fff;
+      }
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include desktop-sm {
+        justify-content: flex-start;
+        margin: 30px auto;
+    }
+  }
 }

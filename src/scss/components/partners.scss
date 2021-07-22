@@ -21,6 +21,9 @@
         margin: 0 45px;
         &:first-child {
             margin-left: 0;
+            @include tablet {
+                margin: auto;
+            }
         }
         @include tablet {
             margin: 15px 45px;

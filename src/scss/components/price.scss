@@ -32,6 +32,10 @@
             font-size: 22px;
             line-height: 22px;
         }
+        @include mobile {
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
     }
     &__condition {
         font-size: 11px;

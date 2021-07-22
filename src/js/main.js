@@ -30,6 +30,9 @@ for (let anchor of anchors) {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
+      body.classList.remove("overflow-hidden");
+      nav.classList.remove("active");
+
       const blockID = anchor.getAttribute("href").substr(1);
 
       document.getElementById(blockID).scrollIntoView({
@@ -63,4 +66,29 @@ detailBtn.forEach(function(btn) {
       this.textContent = "← Назад";
     }
   });
+})
+
+/* burger menu */
+const nav = document.querySelector("#nav")
+const body = document.querySelector("body");
+
+const toggleMenu = () => {
+  nav.classList.toggle('active');
+}
+
+const burgerBtn = document.querySelector("#burger");
+burgerBtn.addEventListener("click", function() {
+  toggleMenu();
+  body.classList.toggle("overflow-hidden")
+})
+
+document.addEventListener('click', e => {
+  let target = e.target;
+  let its_menu = target == nav || nav.contains(target);
+  let its_hamburger = target == burgerBtn;
+  let menu_is_active = nav.classList.contains('active');
+  
+  if (!its_menu && !its_hamburger && menu_is_active) {
+    toggleMenu();
+  }
 })

@@ -42,13 +42,23 @@
 .catalog-tab {
     &__list {
         display: flex;
-        justify-content: space-between;
         margin: 0 0 40px;
         flex-wrap: wrap;
+        justify-content: center;
+
+        @include mobile {
+            margin: 0 0 20px;
+        }
     }
     &__item {
         width: calc(33.3% - 30px);
         min-width: 360px;
+        margin-right: 20px;
+
+
+        // + .catalog-tab__item {
+        //     margin-left: 20px;
+        // }
 
         @include desktop-md {
             width: calc(33.3% - 10px);

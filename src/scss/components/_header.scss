@@ -2,9 +2,16 @@
 
 .header {
     padding: 30px 0;
+
+    @include mobile {
+        padding: 20px 10px;
+    }
     &__inner {
         display: flex;
         justify-content: space-between;
+    }
+    &__logo {
+        max-width: 130px;
     }
     &-info {
         display: flex;
@@ -46,6 +53,10 @@
                 margin-top: 3px;
                 width: 500px;
             }
+            @include mobile {
+                font-size: 13px;
+                line-height: 19px;
+            }
             &:nth-child(2) {
                 @include desktop-sm {
                     display: none;
@@ -69,10 +80,20 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+
+            @include mobile-sm {
+                margin-left: 10px;  
+            }
+
+            @media (max-width: 395px) {
+                display: none;
+            }
         }
 
         &__burger {
             display: none;
+            position: relative;
+            z-index: 1111;
             width: 35px;
             height: 35px;
             background-color: $black;

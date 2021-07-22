@@ -2,43 +2,34 @@
 "use strict";
 // console.log('');
 "use strict";
-// ymaps.ready(function () {
-//   var myMap = new ymaps.Map(
-//       "map",
-//       {
-//         center: [49.801504, 73.096993],
-//         zoom: 18,
-//       },
-//       {
-//         searchControlProvider: "yandex#search",
-//       }
-//     ),
-//     // Создаём макет содержимого.
-//     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-//       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-//     ),
-//     myPlacemark = new ymaps.Placemark(
-//       myMap.getCenter(),
-//       {
-//         hintContent: "значок метки",
-//         balloonContent: "Продажа кондиционеров и сплит систем в Караганде",
-//       },
-//       {
-//         // Опции.
-//         // Необходимо указать данный тип макета.
-//         iconLayout: "default#image",
-//         // Своё изображение иконки метки.
-//         iconImageHref: "../img/location.svg",
-//         // Размеры метки.
-//         iconImageSize: [34, 48],
-//         // Смещение левого верхнего угла иконки относительно
-//         // её "ножки" (точки привязки).
-//         // iconImageOffset: [0, -38],
-//       }
-//     );
-//   myMap.geoObjects.add(myPlacemark)
-// });
 "use strict";
+
+ymaps.ready(function () {
+  var myMap = new ymaps.Map("map", {
+    center: [49.801504, 73.096993],
+    zoom: 18
+  }, {
+    searchControlProvider: "yandex#search"
+  }),
+      // Создаём макет содержимого.
+  MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+    hintContent: "значок метки",
+    balloonContent: "Продажа кондиционеров и сплит систем в Караганде"
+  }, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: "default#image",
+    // Своё изображение иконки метки.
+    iconImageHref: "../img/location.svg",
+    // Размеры метки.
+    iconImageSize: [34, 48] // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    // iconImageOffset: [0, -38],
+
+  });
+  myMap.geoObjects.add(myPlacemark);
+});
 "use strict";
 "use strict";
 
@@ -137,6 +128,8 @@ try {
     if (anchor) {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
+        body.classList.remove("overflow-hidden");
+        nav.classList.remove("active");
         var blockID = anchor.getAttribute("href").substr(1);
         document.getElementById(blockID).scrollIntoView({
           behavior: "smooth",
@@ -179,5 +172,29 @@ detailBtn.forEach(function (btn) {
       this.textContent = "← Назад";
     }
   });
+});
+/* burger menu */
+
+var nav = document.querySelector("#nav");
+var body = document.querySelector("body");
+
+var toggleMenu = function toggleMenu() {
+  nav.classList.toggle('active');
+};
+
+var burgerBtn = document.querySelector("#burger");
+burgerBtn.addEventListener("click", function () {
+  toggleMenu();
+  body.classList.toggle("overflow-hidden");
+});
+document.addEventListener('click', function (e) {
+  var target = e.target;
+  var its_menu = target == nav || nav.contains(target);
+  var its_hamburger = target == burgerBtn;
+  var menu_is_active = nav.classList.contains('active');
+
+  if (!its_menu && !its_hamburger && menu_is_active) {
+    toggleMenu();
+  }
 });
 //# sourceMappingURL=main.js.map
