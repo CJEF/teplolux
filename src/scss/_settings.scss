@@ -1,3 +1,5 @@
+@import "./mixins";
+
 html {
   box-sizing: border-box;
 }
@@ -36,7 +38,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -50,7 +52,7 @@ input[type=number] {
   font-size: 16px;
   line-height: 20px;
   color: $blue;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   appearance: none;
   border: none;
   background-color: #fff;
@@ -59,7 +61,8 @@ input[type=number] {
   &--bordered {
     border: 2px solid $black;
     outline: none;
-    &:focus, &:valid {
+    &:focus,
+    &:valid {
       border-color: $blue;
     }
   }
@@ -69,14 +72,15 @@ input[type=number] {
   font-size: 16px;
   line-height: 20px;
   color: $black;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.input:focus ~ .input-span, .input:valid ~ .input-span {
+.input:focus ~ .input-span,
+.input:valid ~ .input-span {
   transform: translateY(-24px);
   font-size: 11px;
   color: $blue;
@@ -124,6 +128,11 @@ input[type=number] {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1200px;
+
+  @include desktop-md {
+    max-width: 1490px;
+    padding: 0 150px;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -151,7 +160,7 @@ input[type=number] {
   color: #fff;
   transition: color 0.2s ease-in;
   border: 2px solid $black;
-  transition: background .2s ease-in-out,  color .2s ease-in-out;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
   &:hover {
     color: $black;
     background-color: #fff;
@@ -160,7 +169,7 @@ input[type=number] {
 .btn--blue {
   background: $blue;
   color: #fff;
-  transition: color 0.2s ease-in , background-color 0.2s ease-in;
+  transition: color 0.2s ease-in, background-color 0.2s ease-in;
   border: 2px solid $blue;
   &:hover {
     color: $blue;
@@ -190,9 +199,9 @@ h3.subtitle {
     text-decoration: underline;
     color: $black;
     padding: 0;
-    font-family: 'Montserrat-Regular', sans-serif;
+    font-family: "Montserrat-Regular", sans-serif;
     font-weight: 400;
-    transition: text-decoration .2s ease-in-out;
+    transition: text-decoration 0.2s ease-in-out;
     &:hover {
       text-decoration-color: transparent;
     }
@@ -207,8 +216,10 @@ h3.subtitle {
 
 .scroll-top {
   position: fixed;
-  bottom: 200px;
-  right: 290px;
+  // bottom: 200px;
+  // right: 290px;
+  bottom: 23%;
+  right: 6%;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -220,5 +231,91 @@ h3.subtitle {
   box-shadow: 0px 4px 20px rgba(111, 135, 157, 0.3);
   svg {
     width: 19px;
+    height: 19px;
+  }
+}
+
+.site-btn--fixed {
+  position: fixed;
+  min-width: 270px;
+  top: 40%;
+  right: 38px;
+  transform: rotate(270deg);
+
+  &__overlay {
+    position: absolute;
+    z-index: 999;
+    min-width: 270px;
+    height: auto;
+    @include desktop-big {
+      display: none;
+    }
+  }
+  @include desktop-big {
+    display: none;
+  }
+}
+
+.back-main {
+  padding: 80px 0;
+  &__info {
+    display: flex;
+    align-items: center;
+
+    @include desktop-md {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__span {
+    font-family: "Montserrat-Medium", sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
+    display: inline-block;
+    margin-right: 45px;
+    @include desktop-md {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &__number {
+    position: relative;
+    font-family: "Montserrat-Bold", sans-serif;
+    display: inline-flex;
+    padding-left: 65px;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 51px;
+    color: $black;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: $blue;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/phone.svg");
+      background-size: cover;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__btn {
+    min-width: 310px;
+    min-height: 50px;
+    margin-top: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @include desktop-md {
+      margin-top: 20px;
+    }
   }
 }

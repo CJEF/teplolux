@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .catalog {
     padding: 60px 0 30px;
     &__title {
@@ -43,6 +45,10 @@
     }
     &__item {
         width: calc(33.3% - 30px);
+
+        @include desktop-md {
+            width: calc(33.3% - 10px);
+        }
     }
     &__more {
         display: block;
@@ -156,6 +162,10 @@
     width: 300px;
     padding-bottom: 60px;
     margin: 0;
+
+    @include desktop-md {
+        width: auto;
+    }
 }
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: 35px;

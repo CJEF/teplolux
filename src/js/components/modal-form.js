@@ -2,6 +2,7 @@ const callbackBtn = document.querySelectorAll("button.header-info__btn[data-moda
 const requestBtn = document.querySelectorAll("button.article-footer__btn");
 const agreement = document.querySelectorAll("button.agreement__btn[data-modal]");
 const priceBtn = document.querySelectorAll("button.price__btn[data-modal]");
+const dataBtn = document.querySelectorAll("button.site-btn--fixed[data-modal]");
 
 const closeBtn = document.querySelectorAll("#modal-form__close");
 const body = document.querySelector('body');
@@ -21,10 +22,15 @@ function openModal(e) {
 function closeModal(e) {
   const target = e.target;
   const modal = target.closest(".modal-form")
-  const overlay = target.closest(".modal-form__overlay")
+  const overlay = target.closest(".modal-form__overlay");
   modal.classList.remove('active')
   overlay.classList.remove("active");
-  body.classList.remove('overflow-hidden')
+  // modal.forEach(function(elem) {
+    // if (!elem.classList.contains('active')) {
+    //   console.log(elem);
+      body.classList.remove('overflow-hidden');
+    // }
+  // })
 }
 
 callbackBtn.forEach(function (elem) {
@@ -32,6 +38,10 @@ callbackBtn.forEach(function (elem) {
 });
 
 priceBtn.forEach(function (elem) {
+  elem.addEventListener("click", openModal);
+});
+
+dataBtn.forEach(function (elem) {
   elem.addEventListener("click", openModal);
 });
 

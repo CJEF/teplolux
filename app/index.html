@@ -121,6 +121,15 @@
     </div>
 </section>
 
+    <div class="back-main">
+    <div class="container">
+        <div class="back-main__info">
+            <span class="back-main__span">Или звоните прямо сейчас для консультации</span>
+            <a href="tel:+77017958446" class="back-main__number">+7 (701) 795 84 46</a>
+        </div>
+        <a href="/" class="back-main__btn btn--blue btn--sm">← Вернуться на главную</a>
+    </div>
+</div>
     <section class="price" id="price">
     <div class="container price__inner">
         <div class="price__left">
@@ -673,6 +682,9 @@
     </use>
   </svg>
 </a>
+<div class="site-btn--fixed__overlay">
+  <button class="btn btn-reset btn--black btn--sm site-btn--fixed" data-modal="modal-data">Узнать стоимость</button>
+</div>
 
     <div class="modal-form__overlay">
     <div class="modal-form modal-callback" id="modal-callback">
@@ -693,7 +705,8 @@
             </label>
             <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Перезвонить</button>
         </form>
-        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#" class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <button
+            class="btn btn-reset agreement__btn" data-modal="modal-agreement">персональных данных</button> и получение рекламы. С условиями обработки персональных
             данных и получения рекламы - ознакомлен и согласен.
         </p>
     </div>
@@ -728,8 +741,56 @@
             </label>
             <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
         </form>
-        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#"
-                class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <button
+            class="btn btn-reset agreement__btn" data-modal="modal-agreement">персональных данных</button> и получение рекламы. С условиями обработки персональных
+            данных и получения рекламы - ознакомлен и согласен.
+        </p>
+    </div>
+</div>
+
+    <div class="modal-form__overlay">
+    <div class="modal-form modal-email" id="modal-email">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title">Оставьте e-mail</h2>
+        <h3 class="modal-form__subtitle">и мы вышлем вам прайс-лист</h3>
+        <form action="/" class="modal-form__inner">
+            <label class="input-label modal-form__label">
+                <input type="email" class="modal-form__input input input--bordered" required>
+                <span class="input-span">E-mail</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
+        </form>
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <button
+            class="btn btn-reset agreement__btn" data-modal="modal-agreement">персональных данных</button> и получение рекламы. С условиями обработки персональных
+            данных и получения рекламы - ознакомлен и согласен.
+        </p>
+    </div>
+</div>
+
+    <div class="modal-form__overlay">
+    <div class="modal-form modal-data" id="modal-data">
+        <svg class="modal-form__close" id="modal-form__close">
+            <use xlink:href="img/sprite.svg#close">
+            </use>
+        </svg>
+        <h2 class="modal-form__title">Оставьте данные</h2>
+        <h3 class="modal-form__subtitle">и мы проконсультируем о стоимости</h3>
+        <form action="/" class="modal-form__inner">
+            <label class="input-label modal-form__label">
+                <input type="text" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Имя</span>
+            </label>
+            <label class="input-label modal-form__label">
+                <input type="number" class="modal-form__input input input--bordered" required>
+                <span class="input-span">Телефон</span>
+            </label>
+            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
+        </form>
+        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <button
+                class="btn btn-reset agreement__btn" data-modal="modal-agreement">персональных данных</button> и получение рекламы. С условиями обработки персональных
             данных и получения рекламы - ознакомлен и согласен.
         </p>
     </div>
@@ -771,29 +832,6 @@
     </div>
 </div>
 
-    <div class="modal-form__overlay">
-    <div class="modal-form modal-email" id="modal-email">
-        <svg class="modal-form__close" id="modal-form__close">
-            <use xlink:href="img/sprite.svg#close">
-            </use>
-        </svg>
-        <h2 class="modal-form__title">Оставьте e-mail</h2>
-        <h3 class="modal-form__subtitle">и мы вышлем вам прайс-лист</h3>
-        <form action="/" class="modal-form__inner">
-            <label class="input-label modal-form__label">
-                <input type="email" class="modal-form__input input input--bordered" required>
-                <span class="input-span">E-mail</span>
-            </label>
-            <button class="btn btn-reset btn--blue btn--sm modal-form__btn">Отправить</button>
-        </form>
-        <p class="agreement modal-form__agreement">Нажав кнопку «Заказать», я даю согласие на обработку моих <a href="#"
-                class="agreement__link">персональных данных</a> и получение рекламы. С условиями обработки персональных
-            данных и получения рекламы - ознакомлен и согласен.
-        </p>
-    </div>
-</div>
-
-    
   </div>
   <script src="js/vendor.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=976f84ae-3d4f-4bcf-8234-90f7935de4cc" type="text/javascript"></script>
