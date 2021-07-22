@@ -1,4 +1,4 @@
-@mixin desktop-big {
+@mixin desktop-xl {
   @media (max-width: (1800px)) {
     @content;
   }
@@ -6,6 +6,12 @@
 
 @mixin desktop-md {
   @media (max-width: (1400px)) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: (1225px)) {
     @content;
   }
 }
@@ -23,7 +29,7 @@
 }
 
 @mixin mobile {
-  @media (max-width: (768px)) {
+  @media (max-width: (767px)) {
     @content;
   }
 }

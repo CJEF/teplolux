@@ -94,8 +94,8 @@ input[type="number"] {
 .site-container {
   position: relative;
   overflow: hidden;
-  max-width: 1600px;
-  margin: 0 auto;
+  // max-width: 1600px;
+  // margin: 0 auto;
 }
 
 .is-hidden {
@@ -131,7 +131,11 @@ input[type="number"] {
 
   @include desktop-md {
     max-width: 1490px;
-    padding: 0 150px;
+    padding: 0 140px;
+  }
+
+  @include tablet {
+    padding: 0 15px;
   }
 }
 
@@ -183,6 +187,11 @@ h1.title {
   font-size: 42px;
   line-height: 51px;
   font-weight: 700;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 29px;
+  }
 }
 
 h3.subtitle {
@@ -190,6 +199,11 @@ h3.subtitle {
   font-size: 26px;
   line-height: 32px;
   font-weight: 500;
+
+  @include mobile {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 
 .agreement {
@@ -218,8 +232,8 @@ h3.subtitle {
   position: fixed;
   // bottom: 200px;
   // right: 290px;
-  bottom: 23%;
-  right: 6%;
+  bottom: 8%;
+  right: 10%;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -239,7 +253,7 @@ h3.subtitle {
   position: fixed;
   min-width: 270px;
   top: 40%;
-  right: 38px;
+  right: -112px;
   transform: rotate(270deg);
 
   &__overlay {
@@ -247,11 +261,11 @@ h3.subtitle {
     z-index: 999;
     min-width: 270px;
     height: auto;
-    @include desktop-big {
+    @include desktop-xl {
       display: none;
     }
   }
-  @include desktop-big {
+  @include desktop-xl {
     display: none;
   }
 }

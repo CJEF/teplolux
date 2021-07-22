@@ -10,6 +10,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
     &__text {
         font-size: 18px;
@@ -30,9 +35,16 @@
         margin: 0;
     }
 
+    &__btn {
+        margin-top: 15px;
+    }
+
     &__left {
         position: relative;
         padding-right: 88px;
+        @include desktop-xl {
+            padding-right: 0;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -42,6 +54,10 @@
             transform: translateY(-50%);
             width: 83px;
             height: 52px;
+            @include desktop-xl {
+                width: 0;
+                height: 0;
+            }
         }
     }
 }

@@ -5,6 +5,7 @@
     background-image: url(../img/offer-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     &__inner {
         max-width: 770px;
         margin: 0 auto;
@@ -33,6 +34,10 @@
     &-column {
         &__info {
             margin-left: 30px;
+
+            @include tablet {
+                margin-left: 12px;
+            }
         }
         &__icon {
             width: 70px;
@@ -86,6 +91,10 @@
         &__label {
             max-width: 270px;
             width: 100%;
+
+            @include tablet {
+                max-width: 220px;
+            }
         }
     }
 }

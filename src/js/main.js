@@ -46,7 +46,17 @@ detailBtn.forEach(function(btn) {
   btn.addEventListener("click", function (e) {
     const article = this.closest(".catalog-article");
     const wrapper = article.querySelector(".article-info__wrapper");
+    const swiperContainer = document.querySelector('.swiper-container');
     wrapper.classList.toggle("active");
+    console.log(wrapper);
+    let scrollx = article.offsetWidth - 60;
+    console.log(scrollx);
+    // let transform = wrapper.style.transform = "translateX(-" + scrollx + "px)";
+    wrapper.style.width = article.offsetWidth * 2;
+    swiperContainer.style.width = wrapper.style.width;
+    wrapper.style.transform = "translateX(-" + scrollx + "px)";
+    console.log(transform);
+
     if (!wrapper.classList.contains('active')) {
       this.textContent = "← Детальная информация";
     } else {
@@ -54,5 +64,3 @@ detailBtn.forEach(function(btn) {
     }
   });
 })
-
-

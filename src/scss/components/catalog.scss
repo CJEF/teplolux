@@ -20,6 +20,8 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto 30px;
+    overflow-x: scroll;
+
     &__link {
         padding: 10px 30px 13px;
         display: inline-flex;
@@ -42,12 +44,15 @@
         display: flex;
         justify-content: space-between;
         margin: 0 0 40px;
+        flex-wrap: wrap;
     }
     &__item {
         width: calc(33.3% - 30px);
+        min-width: 360px;
 
         @include desktop-md {
             width: calc(33.3% - 10px);
+            margin-bottom: 30px;
         }
     }
     &__more {
@@ -106,6 +111,9 @@
         color: $blue;
         padding: 0 40px;
         margin: 0 auto;
+        @include desktop-xl {
+            padding: 0;
+        }
         span {
             font-size: 20px;
         }
@@ -124,18 +132,19 @@
 .article-info {
     overflow: hidden;
     &__wrapper {
-        width: 600px;
+        width: max-content;
         display: flex;
         justify-content: space-between;
         // overflow: scroll;
         transition: .2s ease-in-out;
         position: relative;
-        transform: translateX(-300px);
+        // transform: translateX(-50%);
         overflow: auto;
         // left: 0;
     }
     &__list {
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
         margin: 0 0 35px;
         max-height: 244px;
         overflow-y: auto;
@@ -159,7 +168,7 @@
 
 // swiper
 .swiper-container {
-    width: 300px;
+    // width: 300px;
     padding-bottom: 60px;
     margin: 0;
 
@@ -173,7 +182,7 @@
 
 .slider-item {
     &__img {
-        width: 100%;
+        max-width: 100%;
         object-fit: cover;
     }
 }

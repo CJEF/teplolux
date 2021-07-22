@@ -27,6 +27,11 @@
                 transform: translateY(-50%);
             }
         }
+        &__location {
+            @include desktop-sm {
+                display: none;
+            }
+        }
         &__number {
             display: block;
             font-family: 'Montserrat-Bold';
@@ -41,9 +46,17 @@
                 margin-top: 3px;
                 width: 500px;
             }
+            &:nth-child(2) {
+                @include desktop-sm {
+                    display: none;
+                }
+            }
         }
         &__btn {
             margin-left: 35px;
+            @include desktop-sm {
+                display: none;
+            }
         }
         &__phones {
             margin-left: 35px;
@@ -55,6 +68,27 @@
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
+            }
+        }
+
+        &__burger {
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: $black;
+            border-radius: 50%;
+            margin-left: 15px;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                width: 11px;
+                height: 2px;
+                background-color: #fff;
+            }
+
+            @include desktop-sm {
+                display: flex;
             }
         }
     }
