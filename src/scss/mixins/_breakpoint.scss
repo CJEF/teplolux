@@ -33,8 +33,15 @@
     @content;
   }
 }
+
 @mixin mobile-sm {
   @media (max-width: (680px)) {
+    @content;
+  }
+}
+
+@mixin mobile-ex-sm {
+  @media (max-width: (360px)) {
     @content;
   }
 }

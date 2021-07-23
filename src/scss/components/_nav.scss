@@ -22,6 +22,10 @@
     overflow-x: hidden;
   }
 
+  @include mobile-ex-sm {
+    padding: 35px 17px 30px;
+  }
+
   &__logo {
     display: none;
     margin-bottom: 45px;
@@ -56,6 +60,25 @@
       color: #fff;
       fill: #fff;
     }
+
+    @include desktop-sm {
+      background-color: #fff;
+      color: $blue;
+
+      svg {
+        fill: $blue;
+        stroke: transparent;
+      }
+
+      &:hover {
+      background-color: $catskillWhite;
+        svg {
+          stroke: $blue;
+          fill: $blue;
+        }
+      }
+    }
+
     &:hover {
       background-color: $catskillWhite;
       svg {
@@ -93,6 +116,10 @@
 
       @include desktop-sm {
         margin-right: 20px;
+      }
+
+      @include mobile-ex-sm {
+        margin-right: 10px;
       }
 
       @include desktop-sm {

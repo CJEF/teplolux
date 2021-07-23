@@ -7,10 +7,22 @@
     background-position: center center;
     padding-bottom: 140px;
     position: relative;
-    // z-index: 1;
+    z-index: 2;
+
+    @include desktop-sm {
+        z-index: inherit;
+    }
 
     @include tablet {
         padding-bottom: 500px;
+    }
+
+    @include mobile {
+        padding-bottom: 265px;
+    }
+
+    @media (max-width: 320px) {
+        padding-bottom: 220px;
     }
 
     &::before {
@@ -19,14 +31,23 @@
         bottom: 0;
         width: 100%;
         height: 100%;
-        background-image: url(../img/intro-bg-2.png);
+        background-image: url(../img/intro-bg-3.png);
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: auto;
         z-index: -1;
 
         @include tablet {
-            background-position: right bottom;
+            background-position: 70% bottom;
+            z-index: inherit;
+        }
+
+        @include mobile {
+            background-size: 1300px;
+        }
+
+        @media (max-width: 320px) {
+            background-size: 1100px;
         }
     }
 

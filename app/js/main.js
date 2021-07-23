@@ -127,12 +127,16 @@ var swiper = new Swiper(".swiper-container", {
 });
 var swiper2 = new Swiper(".catalog-article__body", {
   direction: "horizontal",
-  // loop: true,
+  navigation: {
+    nextEl: ".article-footer__detail-btn",
+    prevEl: ".article-footer__detail-btn--back"
+  } // loop: true,
   // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  } // Navigation arrows
+  //  pagination: {
+  //    el: ".swiper-pagination",
+  //    clickable: true,
+  //  },
+  // Navigation arrows
   // navigation: {
   //   nextEl: '.swiper-button-next',
   //   prevEl: '.swiper-button-prev',
@@ -201,6 +205,7 @@ try {
       }
     });
   }) */
+  // const
 
   /* burger menu */
 
@@ -218,17 +223,25 @@ var burgerBtn = document.querySelector("#burger");
 burgerBtn.addEventListener("click", function (e) {
   nav.classList.toggle("active");
   body.classList.toggle("overflow-hidden");
-  e.target.classList.toggle("active");
+  e.target.closest("#burger").classList.toggle("active");
 });
 /* close menu */
 
 document.addEventListener('click', function (e) {
   if (nav.classList.contains('active')) {
+    // если у нав есть класс актив
     var target = e.target;
-    var its_menu = target == nav;
-    var its_hamburger = target == burgerBtn;
+    var its_menu = target == nav; // место клика равно области нав
+
+    console.log("its_menu", its_menu);
+    var its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
+
+    console.log("its_hamburger", its_hamburger);
+    console.log(target);
 
     if (!its_menu && !its_hamburger) {
+      console.log("!its_menu", !its_menu);
+      console.log("!its_hamburger", !its_hamburger);
       closeMenu();
     }
   }

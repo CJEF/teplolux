@@ -28,6 +28,9 @@
       will-change: transform;
       overflow-y: auto;
       overflow-x: hidden; } }
+  @media (max-width: 360px) {
+    .nav {
+      padding: 35px 17px 30px; } }
   .nav__logo {
     display: none;
     margin-bottom: 45px; }
@@ -48,6 +51,18 @@
     .nav__link-phone .nav-item__icon svg {
       color: #fff;
       fill: #fff; }
+    @media (max-width: 1225px) {
+      .nav__link-phone .nav-item__icon {
+        background-color: #fff;
+        color: #2580d2; }
+        .nav__link-phone .nav-item__icon svg {
+          fill: #2580d2;
+          stroke: transparent; }
+        .nav__link-phone .nav-item__icon:hover {
+          background-color: #F2F6F9; }
+          .nav__link-phone .nav-item__icon:hover svg {
+            stroke: #2580d2;
+            fill: #2580d2; } }
     .nav__link-phone .nav-item__icon:hover {
       background-color: #F2F6F9; }
       .nav__link-phone .nav-item__icon:hover svg {
@@ -75,6 +90,9 @@
     @media (max-width: 1225px) {
       .nav-item__icon {
         margin-right: 20px; } }
+    @media (max-width: 360px) {
+      .nav-item__icon {
+        margin-right: 10px; } }
     @media (max-width: 1225px) {
       .nav-item__icon {
         width: 50px;
@@ -269,24 +287,41 @@
   background-size: cover;
   background-position: center center;
   padding-bottom: 140px;
-  position: relative; }
+  position: relative;
+  z-index: 2; }
+  @media (max-width: 1225px) {
+    .intro {
+      z-index: inherit; } }
   @media (max-width: 1024px) {
     .intro {
       padding-bottom: 500px; } }
+  @media (max-width: 767px) {
+    .intro {
+      padding-bottom: 265px; } }
+  @media (max-width: 320px) {
+    .intro {
+      padding-bottom: 220px; } }
   .intro::before {
     content: '';
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/intro-bg-2.png);
+    background-image: url(../img/intro-bg-3.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: auto;
     z-index: -1; }
     @media (max-width: 1024px) {
       .intro::before {
-        background-position: right bottom; } }
+        background-position: 70% bottom;
+        z-index: inherit; } }
+    @media (max-width: 767px) {
+      .intro::before {
+        background-size: 1300px; } }
+    @media (max-width: 320px) {
+      .intro::before {
+        background-size: 1100px; } }
   .intro__address {
     font-weight: normal;
     font-size: 20px;
@@ -454,6 +489,11 @@
     .tab-header__link:hover {
       color: #fff;
       background-color: #2580d2; }
+    @media (max-width: 767px) {
+      .tab-header__link {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 8px 30px; } }
   .tab-header__link.active {
     background-color: #2580d2;
     color: #fff; }
@@ -1043,9 +1083,15 @@
       margin-top: 3px; }
     .questions-info__link-mail {
       color: #2580d2;
-      text-decoration: underline; }
+      text-decoration: underline;
+      -webkit-text-decoration-color: #2580d2;
+      text-decoration-color: #2580d2;
+      transition: -webkit-text-decoration-color .2s ease-in-out;
+      transition: text-decoration-color .2s ease-in-out;
+      transition: text-decoration-color .2s ease-in-out, -webkit-text-decoration-color .2s ease-in-out; }
       .questions-info__link-mail:hover {
-        text-decoration: none; }
+        -webkit-text-decoration-color: transparent;
+        text-decoration-color: transparent; }
     .questions-info__link:hover {
       color: #2580d2; }
 

@@ -35,6 +35,12 @@
             color: #fff;
             background-color: $blue;
         }
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 20px;
+            padding: 8px 30px;
+        }
     }
     &__link.active{
         background-color: $blue;
