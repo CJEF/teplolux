@@ -24,14 +24,38 @@
    // },
  });
 
+ const swiper2 = new Swiper(".catalog-article__body", {
+   direction: "horizontal",
+   // loop: true,
+   // If we need pagination
+   pagination: {
+     el: ".swiper-pagination",
+     clickable: true,
+   },
+   // Navigation arrows
+   // navigation: {
+   //   nextEl: '.swiper-button-next',
+   //   prevEl: '.swiper-button-prev',
+   // },
+   // And if we need scrollbar
+   // scrollbar: {
+   //   el: '.swiper-scrollbar',
+   // },
+ });
+
+function closeMenu() {
+  nav.classList.remove("active");
+  burgerBtn.classList.remove("active");
+  body.classList.remove("overflow-hidden");
+};
+
 const anchors = document.querySelectorAll('a[href*="#"]');
 for (let anchor of anchors) {
   if (anchor) {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
-      body.classList.remove("overflow-hidden");
-      nav.classList.remove("active");
+      closeMenu();
 
       const blockID = anchor.getAttribute("href").substr(1);
 
@@ -44,7 +68,7 @@ for (let anchor of anchors) {
 }
 
 /* custom slider */
-const detailBtn = document.querySelectorAll(".detail-btn-js");
+/* const detailBtn = document.querySelectorAll(".detail-btn-js");
 detailBtn.forEach(function(btn) {
   btn.addEventListener("click", function (e) {
     const article = this.closest(".catalog-article");
@@ -66,29 +90,31 @@ detailBtn.forEach(function(btn) {
       this.textContent = "← Назад";
     }
   });
-})
+}) */
 
 /* burger menu */
 const nav = document.querySelector("#nav")
 const body = document.querySelector("body");
 
-const toggleMenu = () => {
-  nav.classList.toggle('active');
-}
+/* open menu */
 
 const burgerBtn = document.querySelector("#burger");
-burgerBtn.addEventListener("click", function() {
-  toggleMenu();
-  body.classList.toggle("overflow-hidden")
-})
+burgerBtn.addEventListener("click", function (e) {
+  nav.classList.toggle("active");
+  body.classList.toggle("overflow-hidden");
+  e.target.classList.toggle("active");
+});
 
-document.addEventListener('click', e => {
-  let target = e.target;
-  let its_menu = target == nav || nav.contains(target);
-  let its_hamburger = target == burgerBtn;
-  let menu_is_active = nav.classList.contains('active');
-  
-  if (!its_menu && !its_hamburger && menu_is_active) {
-    toggleMenu();
+/* close menu */
+
+document.addEventListener('click', function(e) {
+  if (nav.classList.contains('active')) {
+    let target = e.target;
+    let its_menu = target == nav;
+    let its_hamburger = target == burgerBtn;
+
+    if (!its_menu && !its_hamburger) {
+      closeMenu();
+    }
   }
 })

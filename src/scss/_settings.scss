@@ -37,6 +37,25 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 10px;
+    border: 2px solid $catskillWhite;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;

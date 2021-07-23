@@ -2,34 +2,43 @@
 "use strict";
 // console.log('');
 "use strict";
+// ymaps.ready(function () {
+//   var myMap = new ymaps.Map(
+//       "map",
+//       {
+//         center: [49.801504, 73.096993],
+//         zoom: 18,
+//       },
+//       {
+//         searchControlProvider: "yandex#search",
+//       }
+//     ),
+//     // Создаём макет содержимого.
+//     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+//       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+//     ),
+//     myPlacemark = new ymaps.Placemark(
+//       myMap.getCenter(),
+//       {
+//         hintContent: "значок метки",
+//         balloonContent: "Продажа кондиционеров и сплит систем в Караганде",
+//       },
+//       {
+//         // Опции.
+//         // Необходимо указать данный тип макета.
+//         iconLayout: "default#image",
+//         // Своё изображение иконки метки.
+//         iconImageHref: "../img/location.svg",
+//         // Размеры метки.
+//         iconImageSize: [34, 48],
+//         // Смещение левого верхнего угла иконки относительно
+//         // её "ножки" (точки привязки).
+//         // iconImageOffset: [0, -38],
+//       }
+//     );
+//   myMap.geoObjects.add(myPlacemark)
+// });
 "use strict";
-
-ymaps.ready(function () {
-  var myMap = new ymaps.Map("map", {
-    center: [49.801504, 73.096993],
-    zoom: 18
-  }, {
-    searchControlProvider: "yandex#search"
-  }),
-      // Создаём макет содержимого.
-  MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-    hintContent: "значок метки",
-    balloonContent: "Продажа кондиционеров и сплит систем в Караганде"
-  }, {
-    // Опции.
-    // Необходимо указать данный тип макета.
-    iconLayout: "default#image",
-    // Своё изображение иконки метки.
-    iconImageHref: "../img/location.svg",
-    // Размеры метки.
-    iconImageSize: [34, 48] // Смещение левого верхнего угла иконки относительно
-    // её "ножки" (точки привязки).
-    // iconImageOffset: [0, -38],
-
-  });
-  myMap.geoObjects.add(myPlacemark);
-});
 "use strict";
 "use strict";
 
@@ -116,6 +125,32 @@ var swiper = new Swiper(".swiper-container", {
   // },
 
 });
+var swiper2 = new Swiper(".catalog-article__body", {
+  direction: "horizontal",
+  // loop: true,
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  } // Navigation arrows
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+  // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+
+});
+
+function closeMenu() {
+  nav.classList.remove("active");
+  burgerBtn.classList.remove("active");
+  body.classList.remove("overflow-hidden");
+}
+
+;
 var anchors = document.querySelectorAll('a[href*="#"]');
 
 var _iterator = _createForOfIteratorHelper(anchors),
@@ -128,8 +163,7 @@ try {
     if (anchor) {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        body.classList.remove("overflow-hidden");
-        nav.classList.remove("active");
+        closeMenu();
         var blockID = anchor.getAttribute("href").substr(1);
         document.getElementById(blockID).scrollIntoView({
           behavior: "smooth",
@@ -144,57 +178,59 @@ try {
   }
   /* custom slider */
 
+  /* const detailBtn = document.querySelectorAll(".detail-btn-js");
+  detailBtn.forEach(function(btn) {
+    btn.addEventListener("click", function (e) {
+      const article = this.closest(".catalog-article");
+      const wrapper = article.querySelector(".article-info__wrapper");
+      const swiperContainer = document.querySelector('.swiper-container');
+      wrapper.classList.toggle("active");
+      console.log(wrapper);
+      let scrollx = article.offsetWidth - 60;
+      console.log(scrollx);
+      // let transform = wrapper.style.transform = "translateX(-" + scrollx + "px)";
+      wrapper.style.width = article.offsetWidth * 2;
+      swiperContainer.style.width = wrapper.style.width;
+      wrapper.style.transform = "translateX(-" + scrollx + "px)";
+      console.log(transform);
+  
+      if (!wrapper.classList.contains('active')) {
+        this.textContent = "← Детальная информация";
+      } else {
+        this.textContent = "← Назад";
+      }
+    });
+  }) */
+
+  /* burger menu */
+
 } catch (err) {
   _iterator.e(err);
 } finally {
   _iterator.f();
 }
 
-var detailBtn = document.querySelectorAll(".detail-btn-js");
-detailBtn.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    var article = this.closest(".catalog-article");
-    var wrapper = article.querySelector(".article-info__wrapper");
-    var swiperContainer = document.querySelector('.swiper-container');
-    wrapper.classList.toggle("active");
-    console.log(wrapper);
-    var scrollx = article.offsetWidth - 60;
-    console.log(scrollx); // let transform = wrapper.style.transform = "translateX(-" + scrollx + "px)";
-
-    wrapper.style.width = article.offsetWidth * 2;
-    swiperContainer.style.width = wrapper.style.width;
-    wrapper.style.transform = "translateX(-" + scrollx + "px)";
-    console.log(transform);
-
-    if (!wrapper.classList.contains('active')) {
-      this.textContent = "← Детальная информация";
-    } else {
-      this.textContent = "← Назад";
-    }
-  });
-});
-/* burger menu */
-
 var nav = document.querySelector("#nav");
 var body = document.querySelector("body");
-
-var toggleMenu = function toggleMenu() {
-  nav.classList.toggle('active');
-};
+/* open menu */
 
 var burgerBtn = document.querySelector("#burger");
-burgerBtn.addEventListener("click", function () {
-  toggleMenu();
+burgerBtn.addEventListener("click", function (e) {
+  nav.classList.toggle("active");
   body.classList.toggle("overflow-hidden");
+  e.target.classList.toggle("active");
 });
-document.addEventListener('click', function (e) {
-  var target = e.target;
-  var its_menu = target == nav || nav.contains(target);
-  var its_hamburger = target == burgerBtn;
-  var menu_is_active = nav.classList.contains('active');
+/* close menu */
 
-  if (!its_menu && !its_hamburger && menu_is_active) {
-    toggleMenu();
+document.addEventListener('click', function (e) {
+  if (nav.classList.contains('active')) {
+    var target = e.target;
+    var its_menu = target == nav;
+    var its_hamburger = target == burgerBtn;
+
+    if (!its_menu && !its_hamburger) {
+      closeMenu();
+    }
   }
 });
 //# sourceMappingURL=main.js.map

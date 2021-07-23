@@ -20,7 +20,10 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto 30px;
-    overflow-x: scroll;
+
+    @include desktop-sm {
+        overflow-x: scroll;
+    }
 
     &__link {
         padding: 10px 30px 13px;
@@ -178,7 +181,7 @@
 
 // swiper
 .swiper-container {
-    // width: 300px;
+    width: 300px;
     padding-bottom: 60px;
     margin: 0;
 

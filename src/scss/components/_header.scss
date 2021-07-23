@@ -11,7 +11,9 @@
         justify-content: space-between;
     }
     &__logo {
-        max-width: 130px;
+        @include mobile {
+            max-width: 130px;
+        }
     }
     &-info {
         display: flex;
@@ -82,7 +84,7 @@
             }
 
             @include mobile-sm {
-                margin-left: 10px;  
+                margin-left: 10px;
             }
 
             @media (max-width: 395px) {
@@ -103,14 +105,55 @@
             align-items: center;
             flex-direction: column;
 
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+
             span {
                 width: 19px;
                 height: 2px;
                 background-color: #fff;
+                position: absolute;
+                transition: 0.3s ease-in-out;
+                left: 8px;
+
+                &:nth-child(1) {
+                    top: 10px;
+                }
 
                 &:nth-child(2) {
-                    margin: 3px 0;
+                    top: 16px;
                 }
+
+                &:nth-child(3) {
+                    bottom: 11px;
+                }
+            }
+
+            &.active span:nth-child(1) {
+            top: 17px;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg);
+            }
+
+            &.active span:nth-child(2) {
+            opacity: 0;
+            left: -10px;
+            }
+
+            &.active span:nth-child(3) {
+            top: 17px;
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            transform: rotate(-135deg);
             }
 
             @include desktop-sm {
