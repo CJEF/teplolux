@@ -28,10 +28,12 @@
    },
  });
 
+ /* close nav menu on mobile phone */
 function closeMenu() {
   nav.classList.remove("active");
   burgerBtn.classList.remove("active");
   body.classList.remove("overflow-hidden");
+  nav.closest(".nav-wrapper").classList.remove("active");
 };
 
 const anchors = document.querySelectorAll('a[href*="#"]');
@@ -51,6 +53,22 @@ for (let anchor of anchors) {
     });
   }
 }
+
+const scrollTop = document.querySelector(".scroll-top");
+const introHeight = document.querySelector("#intro").offsetHeight;
+// console.log("scrollTop", scrollTop);
+// console.log("introHeight", introHeight);
+// console.log("window.top", window.top);
+// console.log("window.scrollTop ", window.scrollTop );
+// console.log("window.scrollY", window.scrollY );
+
+document.addEventListener("scroll", function() {
+  if (window.scrollY > introHeight) {
+    scrollTop.classList.add("active");
+  } else {
+    scrollTop.classList.remove("active");
+  }
+})
 
 /* const sliderPrevBtn = document.querySelectorAll(".detail-btn-js--back");
 const sliderNextBtn = document.querySelectorAll(".detail-btn-js");

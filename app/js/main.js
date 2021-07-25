@@ -12,6 +12,7 @@ burgerBtn.addEventListener("click", function (e) {
   nav.classList.toggle("active");
   body.classList.toggle("overflow-hidden");
   e.target.closest("#burger").classList.toggle("active");
+  nav.closest(".nav-wrapper").classList.toggle("active");
 });
 /* close menu */
 
@@ -23,9 +24,8 @@ document.addEventListener('click', function (e) {
 
     console.log("its_menu", its_menu);
     var its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
-
-    console.log("its_hamburger", its_hamburger);
-    console.log(target);
+    // console.log("its_hamburger", its_hamburger);
+    // console.log(target);
 
     if (!its_menu && !its_hamburger) {
       console.log("!its_menu", !its_menu);
@@ -36,43 +36,34 @@ document.addEventListener('click', function (e) {
 });
 // console.log('');
 "use strict";
-// ymaps.ready(function () {
-//   var myMap = new ymaps.Map(
-//       "map",
-//       {
-//         center: [49.801504, 73.096993],
-//         zoom: 18,
-//       },
-//       {
-//         searchControlProvider: "yandex#search",
-//       }
-//     ),
-//     // Создаём макет содержимого.
-//     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-//       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-//     ),
-//     myPlacemark = new ymaps.Placemark(
-//       myMap.getCenter(),
-//       {
-//         hintContent: "значок метки",
-//         balloonContent: `<img src="../img/logo.svg" class="questions__map-logo" alt="map image"><p class="questions__map-text">Продажа кондиционеров и сплит систем в Караганде</p>`,
-//       },
-//       {
-//         // Опции.
-//         // Необходимо указать данный тип макета.
-//         iconLayout: "default#image",
-//         // Своё изображение иконки метки.
-//         iconImageHref: "../img/location.svg",
-//         // Размеры метки.
-//         iconImageSize: [34, 48],
-//         // Смещение левого верхнего угла иконки относительно
-//         // её "ножки" (точки привязки).
-//         iconImageOffset: [-18, -55],
-//       }
-//     );
-//   myMap.geoObjects.add(myPlacemark)
-// });
 "use strict";
+
+ymaps.ready(function () {
+  var myMap = new ymaps.Map("map", {
+    center: [49.801504, 73.096993],
+    zoom: 18
+  }, {
+    searchControlProvider: "yandex#search"
+  }),
+      // Создаём макет содержимого.
+  MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+    hintContent: "значок метки",
+    balloonContent: "<img src=\"../img/logo.svg\" class=\"questions__map-logo\" alt=\"map image\"><p class=\"questions__map-text\">\u041F\u0440\u043E\u0434\u0430\u0436\u0430 \u043A\u043E\u043D\u0434\u0438\u0446\u0438\u043E\u043D\u0435\u0440\u043E\u0432 \u0438 \u0441\u043F\u043B\u0438\u0442 \u0441\u0438\u0441\u0442\u0435\u043C \u0432 \u041A\u0430\u0440\u0430\u0433\u0430\u043D\u0434\u0435</p>"
+  }, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: "default#image",
+    // Своё изображение иконки метки.
+    iconImageHref: "../img/location.svg",
+    // Размеры метки.
+    iconImageSize: [34, 48],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-18, -55]
+  });
+  myMap.geoObjects.add(myPlacemark);
+});
 "use strict";
 "use strict";
 
@@ -161,11 +152,13 @@ var swiper2 = new Swiper(".catalog-article__body", {
     prevEl: ".article-footer__detail-btn--back"
   }
 });
+/* close nav menu on mobile phone */
 
 function closeMenu() {
   nav.classList.remove("active");
   burgerBtn.classList.remove("active");
   body.classList.remove("overflow-hidden");
+  nav.closest(".nav-wrapper").classList.remove("active");
 }
 
 ;
@@ -194,56 +187,70 @@ try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     _loop();
   }
-  /* const sliderPrevBtn = document.querySelectorAll(".detail-btn-js--back");
-  const sliderNextBtn = document.querySelectorAll(".detail-btn-js");
-  sliderPrevBtn.forEach(element => {
-    element.addEventListener("click", function() {
-      element.style.display = 'none';
-      sliderNextBtn.forEach(element => {
-        element.style.display = 'block';
-      });
-    })
-  });
-  
-  sliderNextBtn.forEach(element => {
-    element.addEventListener("click", function() {
-      element.style.display = 'none';
-      sliderPrevBtn.forEach(element => {
-        element.style.display = 'block';
-      });
-    })
-  }); */
-
-  /* custom slider */
-
-  /* const detailBtn = document.querySelectorAll(".detail-btn-js");
-  detailBtn.forEach(function(btn) {
-    btn.addEventListener("click", function (e) {
-      const article = this.closest(".catalog-article");
-      const wrapper = article.querySelector(".article-info__wrapper");
-      const swiperContainer = document.querySelector('.swiper-container');
-      wrapper.classList.toggle("active");
-      console.log(wrapper);
-      let scrollx = article.offsetWidth - 60;
-      console.log(scrollx);
-      // let transform = wrapper.style.transform = "translateX(-" + scrollx + "px)";
-      wrapper.style.width = article.offsetWidth * 2;
-      swiperContainer.style.width = wrapper.style.width;
-      wrapper.style.transform = "translateX(-" + scrollx + "px)";
-      console.log(transform);
-  
-      if (!wrapper.classList.contains('active')) {
-        this.textContent = "← Детальная информация";
-      } else {
-        this.textContent = "← Назад";
-      }
-    });
-  }) */
-  // const
-
 } catch (err) {
   _iterator.e(err);
 } finally {
   _iterator.f();
 }
+
+var scrollTop = document.querySelector(".scroll-top");
+var introHeight = document.querySelector("#intro").offsetHeight; // console.log("scrollTop", scrollTop);
+// console.log("introHeight", introHeight);
+// console.log("window.top", window.top);
+// console.log("window.scrollTop ", window.scrollTop );
+// console.log("window.scrollY", window.scrollY );
+
+document.addEventListener("scroll", function () {
+  if (window.scrollY > introHeight) {
+    scrollTop.classList.add("active");
+  } else {
+    scrollTop.classList.remove("active");
+  }
+});
+/* const sliderPrevBtn = document.querySelectorAll(".detail-btn-js--back");
+const sliderNextBtn = document.querySelectorAll(".detail-btn-js");
+sliderPrevBtn.forEach(element => {
+  element.addEventListener("click", function() {
+    element.style.display = 'none';
+    sliderNextBtn.forEach(element => {
+      element.style.display = 'block';
+    });
+  })
+});
+
+sliderNextBtn.forEach(element => {
+  element.addEventListener("click", function() {
+    element.style.display = 'none';
+    sliderPrevBtn.forEach(element => {
+      element.style.display = 'block';
+    });
+  })
+}); */
+
+/* custom slider */
+
+/* const detailBtn = document.querySelectorAll(".detail-btn-js");
+detailBtn.forEach(function(btn) {
+  btn.addEventListener("click", function (e) {
+    const article = this.closest(".catalog-article");
+    const wrapper = article.querySelector(".article-info__wrapper");
+    const swiperContainer = document.querySelector('.swiper-container');
+    wrapper.classList.toggle("active");
+    console.log(wrapper);
+    let scrollx = article.offsetWidth - 60;
+    console.log(scrollx);
+    // let transform = wrapper.style.transform = "translateX(-" + scrollx + "px)";
+    wrapper.style.width = article.offsetWidth * 2;
+    swiperContainer.style.width = wrapper.style.width;
+    wrapper.style.transform = "translateX(-" + scrollx + "px)";
+    console.log(transform);
+
+    if (!wrapper.classList.contains('active')) {
+      this.textContent = "← Детальная информация";
+    } else {
+      this.textContent = "← Назад";
+    }
+  });
+}) */
+// const
 //# sourceMappingURL=main.js.map

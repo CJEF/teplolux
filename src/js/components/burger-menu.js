@@ -9,6 +9,7 @@ burgerBtn.addEventListener("click", function (e) {
   nav.classList.toggle("active");
   body.classList.toggle("overflow-hidden");
   e.target.closest("#burger").classList.toggle("active");
+  nav.closest(".nav-wrapper").classList.toggle("active");
 });
 
 /* close menu */
@@ -20,9 +21,9 @@ document.addEventListener('click', function(e) {
     let its_menu = target == nav; // место клика равно области нав
     console.log("its_menu", its_menu);
     let its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
-    console.log("its_hamburger", its_hamburger);
+    // console.log("its_hamburger", its_hamburger);
 
-    console.log(target);
+    // console.log(target);
 
     if (!its_menu && !its_hamburger) {
       console.log("!its_menu", !its_menu);

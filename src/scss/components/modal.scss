@@ -70,7 +70,7 @@
     &__overlay {
         display: flex;
         position: fixed;
-        padding: 80px;
+        padding: 50px;
         top: 0;
         left: 0;
         width: 100%;
@@ -84,7 +84,7 @@
         overflow-x: hidden;
 
         @include mobile {
-            padding: 50px 0;
+            padding: 0;
         }
 
         &.active {
