@@ -7,6 +7,8 @@
 
  const swiper = new Swiper(".swiper-container", {
    direction: "horizontal",
+  //  draggable: false,
+  //  allowTouchMove: false,
    // loop: true,
    pagination: {
     el: '.swiper-pagination',
@@ -15,17 +17,10 @@
    // scrollbar: {
    //   el: '.swiper-scrollbar',
    // },
- });
-
- const swiper2 = new Swiper(".catalog-article__body", {
-   direction: "horizontal",
-   draggable: false,
-   allowTouchMove: false,
-
-   navigation: {
-     nextEl: ".article-footer__detail-btn",
-     prevEl: ".article-footer__detail-btn--back",
-   },
+  //  navigation: {
+  //   nextEl: ".article-footer__detail-btn",
+  //   prevEl: ".article-footer__detail-btn--back",
+  // },
  });
 
  /* close nav menu on mobile phone */
@@ -54,6 +49,8 @@ for (let anchor of anchors) {
   }
 }
 
+
+/* scrollTop button activation */
 const scrollTop = document.querySelector(".scroll-top");
 const introHeight = document.querySelector("#intro").offsetHeight;
 // console.log("scrollTop", scrollTop);
@@ -70,27 +67,29 @@ document.addEventListener("scroll", function() {
   }
 })
 
-/* const sliderPrevBtn = document.querySelectorAll(".detail-btn-js--back");
-const sliderNextBtn = document.querySelectorAll(".detail-btn-js");
-sliderPrevBtn.forEach(element => {
-  element.addEventListener("click", function() {
-    element.style.display = 'none';
-    sliderNextBtn.forEach(element => {
-      element.style.display = 'block';
-    });
-  })
-});
 
-sliderNextBtn.forEach(element => {
-  element.addEventListener("click", function() {
-    element.style.display = 'none';
-    sliderPrevBtn.forEach(element => {
-      element.style.display = 'block';
-    });
-  })
-}); */
 
-/* custom slider */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* const detailBtn = document.querySelectorAll(".detail-btn-js");
 detailBtn.forEach(function(btn) {
   btn.addEventListener("click", function (e) {
@@ -113,7 +112,6 @@ detailBtn.forEach(function(btn) {
       this.textContent = "← Назад";
     }
   });
-}) */
-
-// const
+})
+ */
 

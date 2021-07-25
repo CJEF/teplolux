@@ -34,6 +34,46 @@ document.addEventListener('click', function (e) {
     }
   }
 });
+"use strict";
+
+/* slider custom */
+var slider = document.querySelector(".article-info");
+var sliderWidth = slider.offsetWidth;
+
+function initSlider() {
+  var sliderWidth = slider.offsetWidth; // берем ширину слайдера (ширину родителя с оверлоу хидден)
+
+  var slide = document.querySelectorAll(".article-info__slide");
+  slide.forEach(function (elem) {
+    elem.style.width = sliderWidth + 'px';
+    console.log(elem.style.width);
+  });
+}
+
+var detailBtn = document.querySelectorAll(".detail-btn-js");
+detailBtn.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    var sliderWidth = slider.offsetWidth;
+    var target = e.target;
+    var article = target.closest(".catalog-article");
+    var sliderLine = article.querySelector(".article-info__line");
+
+    if (btn.classList.contains("active")) {
+      sliderLine.style.transform = 'translateX(' + 0 + 'px)';
+      btn.classList.remove("active");
+      this.textContent = "← Детальная информация";
+    } else {
+      btn.classList.add("active");
+      sliderLine.style.transform = 'translateX(' + -sliderWidth + 'px)';
+      this.textContent = "← Назад";
+    }
+  });
+});
+window.addEventListener("resize", function () {
+  initSlider();
+  console.log(123);
+});
+initSlider();
 // console.log('');
 "use strict";
 "use strict";
@@ -49,13 +89,13 @@ ymaps.ready(function () {
   MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
     hintContent: "значок метки",
-    balloonContent: "<img src=\"../img/logo.svg\" class=\"questions__map-logo\" alt=\"map image\"><p class=\"questions__map-text\">\u041F\u0440\u043E\u0434\u0430\u0436\u0430 \u043A\u043E\u043D\u0434\u0438\u0446\u0438\u043E\u043D\u0435\u0440\u043E\u0432 \u0438 \u0441\u043F\u043B\u0438\u0442 \u0441\u0438\u0441\u0442\u0435\u043C \u0432 \u041A\u0430\u0440\u0430\u0433\u0430\u043D\u0434\u0435</p>"
+    balloonContent: "<img src=\"./img/logo.svg\" class=\"questions__map-logo\" alt=\"map image\"><p class=\"questions__map-text\">\u041F\u0440\u043E\u0434\u0430\u0436\u0430 \u043A\u043E\u043D\u0434\u0438\u0446\u0438\u043E\u043D\u0435\u0440\u043E\u0432 \u0438 \u0441\u043F\u043B\u0438\u0442 \u0441\u0438\u0441\u0442\u0435\u043C \u0432 \u041A\u0430\u0440\u0430\u0433\u0430\u043D\u0434\u0435</p>"
   }, {
     // Опции.
     // Необходимо указать данный тип макета.
     iconLayout: "default#image",
     // Своё изображение иконки метки.
-    iconImageHref: "../img/location.svg",
+    iconImageHref: "./img/location.svg",
     // Размеры метки.
     iconImageSize: [34, 48],
     // Смещение левого верхнего угла иконки относительно
@@ -134,6 +174,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   */
 var swiper = new Swiper(".swiper-container", {
   direction: "horizontal",
+  //  draggable: false,
+  //  allowTouchMove: false,
   // loop: true,
   pagination: {
     el: '.swiper-pagination',
@@ -141,16 +183,11 @@ var swiper = new Swiper(".swiper-container", {
   } // scrollbar: {
   //   el: '.swiper-scrollbar',
   // },
+  //  navigation: {
+  //   nextEl: ".article-footer__detail-btn",
+  //   prevEl: ".article-footer__detail-btn--back",
+  // },
 
-});
-var swiper2 = new Swiper(".catalog-article__body", {
-  direction: "horizontal",
-  draggable: false,
-  allowTouchMove: false,
-  navigation: {
-    nextEl: ".article-footer__detail-btn",
-    prevEl: ".article-footer__detail-btn--back"
-  }
 });
 /* close nav menu on mobile phone */
 
@@ -187,6 +224,8 @@ try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     _loop();
   }
+  /* scrollTop button activation */
+
 } catch (err) {
   _iterator.e(err);
 } finally {
@@ -207,28 +246,6 @@ document.addEventListener("scroll", function () {
     scrollTop.classList.remove("active");
   }
 });
-/* const sliderPrevBtn = document.querySelectorAll(".detail-btn-js--back");
-const sliderNextBtn = document.querySelectorAll(".detail-btn-js");
-sliderPrevBtn.forEach(element => {
-  element.addEventListener("click", function() {
-    element.style.display = 'none';
-    sliderNextBtn.forEach(element => {
-      element.style.display = 'block';
-    });
-  })
-});
-
-sliderNextBtn.forEach(element => {
-  element.addEventListener("click", function() {
-    element.style.display = 'none';
-    sliderPrevBtn.forEach(element => {
-      element.style.display = 'block';
-    });
-  })
-}); */
-
-/* custom slider */
-
 /* const detailBtn = document.querySelectorAll(".detail-btn-js");
 detailBtn.forEach(function(btn) {
   btn.addEventListener("click", function (e) {
@@ -251,6 +268,6 @@ detailBtn.forEach(function(btn) {
       this.textContent = "← Назад";
     }
   });
-}) */
-// const
+})
+ */
 //# sourceMappingURL=main.js.map

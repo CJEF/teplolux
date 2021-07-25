@@ -650,7 +650,7 @@ input[type="number"] {
   background-color: #fff;
   outline: none; }
   .input--bordered {
-    border: 2px solid #212121;
+    border: 1px solid #212121;
     outline: none; }
     .input--bordered:focus, .input--bordered:valid {
       border-color: #2580d2; }
@@ -706,8 +706,8 @@ input[type="number"] {
   @media (max-width: 1400px) {
     .container {
       max-width: 1490px;
-      padding: 0 140px; } }
-  @media (max-width: 1024px) {
+      padding: 0 15px 0 140px; } }
+  @media (max-width: 1225px) {
     .container {
       padding: 0 15px; } }
 

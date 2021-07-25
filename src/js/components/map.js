@@ -17,14 +17,14 @@ ymaps.ready(function () {
       myMap.getCenter(),
       {
         hintContent: "значок метки",
-        balloonContent: `<img src="../img/logo.svg" class="questions__map-logo" alt="map image"><p class="questions__map-text">Продажа кондиционеров и сплит систем в Караганде</p>`,
+        balloonContent: `<img src="./img/logo.svg" class="questions__map-logo" alt="map image"><p class="questions__map-text">Продажа кондиционеров и сплит систем в Караганде</p>`,
       },
       {
         // Опции.
         // Необходимо указать данный тип макета.
         iconLayout: "default#image",
         // Своё изображение иконки метки.
-        iconImageHref: "../img/location.svg",
+        iconImageHref: "./img/location.svg",
         // Размеры метки.
         iconImageSize: [34, 48],
         // Смещение левого верхнего угла иконки относительно

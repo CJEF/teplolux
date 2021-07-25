@@ -91,8 +91,11 @@
         font-size: 16px;
         line-height: 20px;
         color: $blue;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        transition: text-decoration-color .2s ease-in-out;
         &:hover {
-            text-decoration: underline;
+            text-decoration-color: currentColor;
         }
     }
 }
@@ -163,17 +166,17 @@
         color: $blue;
         padding: 0 40px;
         margin: 0 auto;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        transition: text-decoration-color .2s ease-in-out;
         @include desktop-xl {
             padding: 0;
-        }
-        &--back {
-            display: none;  
         }
         span {
             font-size: 20px;
         }
         &:hover {
-            text-decoration: underline;
+            text-decoration-color: currentColor;
         }
         &:hover span {
             // animation-duration: .2s;
@@ -228,21 +231,21 @@
             line-height: 16px;
         }
     }
+
+    &__slide {
+        overflow: hidden;
+    }
 }
 
 // swiper
 .swiper-container {
-    width: 300px !important;
+    // width: 330px;
     padding-bottom: 60px;
     margin: 0;
+    width: auto;
 
-    @include desktop-md {
-        width: auto;
-    }
-
-    @include mobile-ex-sm {
-        width: 290px !important;
-    }
+    // @include desktop-md {
+    // }
 }
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: 35px;
@@ -250,7 +253,8 @@
 
 .slider-item {
     &__img {
-        max-width: 100%;
+        max-width: 330px;
+        width: 100%;
         object-fit: cover;
     }
 }

@@ -141,7 +141,7 @@
             &-mail {
                 color: $blue;
                 text-decoration: underline;
-                text-decoration-color: $blue;
+                text-decoration-color: currentColor;
                 transition: text-decoration-color .2s ease-in-out;
                 &:hover {
                     text-decoration-color: transparent;

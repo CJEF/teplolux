@@ -13,7 +13,7 @@
         z-index: inherit;
     }
 
-    @include tablet {
+    @include desktop-sm {
         padding-bottom: 500px;
     }
 
@@ -37,7 +37,7 @@
         background-size: auto;
         z-index: -1;
 
-        @include tablet {
+        @include desktop-sm {
             background-position: 70% bottom;
             z-index: inherit;
         }

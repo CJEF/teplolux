@@ -4,7 +4,7 @@
     padding: 30px 0;
 
     @include mobile {
-        padding: 20px 10px;
+        padding: 20px 0 10px;
     }
     &__inner {
         display: flex;
@@ -81,13 +81,20 @@
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
+
+                @include mobile {
+                    width: 25px;
+                    height: 25px;
+                    top: 35%;
+                }
             }
 
             @include mobile-sm {
-                margin-left: 10px;
+                margin-left: 0;
+                padding-left: 34px;
             }
 
-            @media (max-width: 395px) {
+            @media (max-width: 350px) {
                 display: none;
             }
         }
@@ -158,6 +165,10 @@
 
             @include desktop-sm {
                 display: flex;
+            }
+
+            @include mobile-sm {
+                margin-left: 5px;
             }
         }
     }

@@ -78,7 +78,7 @@ input[type="number"] {
   outline: none;
 
   &--bordered {
-    border: 2px solid $black;
+    border: 1px solid $black;
     outline: none;
     &:focus,
     &:valid {
@@ -150,10 +150,10 @@ input[type="number"] {
 
   @include desktop-md {
     max-width: 1490px;
-    padding: 0 140px;
+    padding: 0 15px 0 140px;
   }
 
-  @include tablet {
+  @include desktop-sm {
     padding: 0 15px;
   }
 }
