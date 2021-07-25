@@ -6,6 +6,33 @@
         max-height: 560px;
         height: 560px;
         position: relative;
+
+        &-logo {
+            margin-top: 5px;
+            max-width: 142px;
+        }
+        &-text {
+            font-family: "Montserrat-Regular", sans-serif;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 14px;
+            max-width: 270px;
+        }
+        
+    }
+
+    #map {
+        .ymaps-2-1-78-balloon__tail:after {
+            bottom: -140px;
+            left: auto;
+            right: -222px;
+        }
+
+        .ymaps-2-1-78-balloon.ymaps-2-1-78-balloon_layout_normal {
+            max-width: 335px;
+            top: -80px !important;
+            left: -320px !important;
+        }
     }
     &__content {
         position: absolute;

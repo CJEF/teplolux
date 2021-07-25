@@ -1,5 +1,39 @@
 // console.log('global');
 "use strict";
+"use strict";
+
+/* burger menu */
+var nav = document.querySelector("#nav");
+var body = document.querySelector("body");
+/* open menu */
+
+var burgerBtn = document.querySelector("#burger");
+burgerBtn.addEventListener("click", function (e) {
+  nav.classList.toggle("active");
+  body.classList.toggle("overflow-hidden");
+  e.target.closest("#burger").classList.toggle("active");
+});
+/* close menu */
+
+document.addEventListener('click', function (e) {
+  if (nav.classList.contains('active')) {
+    // если у нав есть класс актив
+    var target = e.target;
+    var its_menu = target == nav; // место клика равно области нав
+
+    console.log("its_menu", its_menu);
+    var its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
+
+    console.log("its_hamburger", its_hamburger);
+    console.log(target);
+
+    if (!its_menu && !its_hamburger) {
+      console.log("!its_menu", !its_menu);
+      console.log("!its_hamburger", !its_hamburger);
+      closeMenu();
+    }
+  }
+});
 // console.log('');
 "use strict";
 // ymaps.ready(function () {
@@ -21,7 +55,7 @@
 //       myMap.getCenter(),
 //       {
 //         hintContent: "значок метки",
-//         balloonContent: "Продажа кондиционеров и сплит систем в Караганде",
+//         balloonContent: `<img src="../img/logo.svg" class="questions__map-logo" alt="map image"><p class="questions__map-text">Продажа кондиционеров и сплит систем в Караганде</p>`,
 //       },
 //       {
 //         // Опции.
@@ -33,7 +67,7 @@
 //         iconImageSize: [34, 48],
 //         // Смещение левого верхнего угла иконки относительно
 //         // её "ножки" (точки привязки).
-//         // iconImageOffset: [0, -38],
+//         iconImageOffset: [-18, -55],
 //       }
 //     );
 //   myMap.geoObjects.add(myPlacemark)
@@ -110,42 +144,22 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var swiper = new Swiper(".swiper-container", {
   direction: "horizontal",
   // loop: true,
-  // If we need pagination
   pagination: {
     el: '.swiper-pagination',
     clickable: true
-  } // Navigation arrows
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-  // And if we need scrollbar
-  // scrollbar: {
+  } // scrollbar: {
   //   el: '.swiper-scrollbar',
   // },
 
 });
 var swiper2 = new Swiper(".catalog-article__body", {
   direction: "horizontal",
+  draggable: false,
+  allowTouchMove: false,
   navigation: {
     nextEl: ".article-footer__detail-btn",
     prevEl: ".article-footer__detail-btn--back"
-  } // loop: true,
-  // If we need pagination
-  //  pagination: {
-  //    el: ".swiper-pagination",
-  //    clickable: true,
-  //  },
-  // Navigation arrows
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
-
+  }
 });
 
 function closeMenu() {
@@ -180,6 +194,26 @@ try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     _loop();
   }
+  /* const sliderPrevBtn = document.querySelectorAll(".detail-btn-js--back");
+  const sliderNextBtn = document.querySelectorAll(".detail-btn-js");
+  sliderPrevBtn.forEach(element => {
+    element.addEventListener("click", function() {
+      element.style.display = 'none';
+      sliderNextBtn.forEach(element => {
+        element.style.display = 'block';
+      });
+    })
+  });
+  
+  sliderNextBtn.forEach(element => {
+    element.addEventListener("click", function() {
+      element.style.display = 'none';
+      sliderPrevBtn.forEach(element => {
+        element.style.display = 'block';
+      });
+    })
+  }); */
+
   /* custom slider */
 
   /* const detailBtn = document.querySelectorAll(".detail-btn-js");
@@ -207,43 +241,9 @@ try {
   }) */
   // const
 
-  /* burger menu */
-
 } catch (err) {
   _iterator.e(err);
 } finally {
   _iterator.f();
 }
-
-var nav = document.querySelector("#nav");
-var body = document.querySelector("body");
-/* open menu */
-
-var burgerBtn = document.querySelector("#burger");
-burgerBtn.addEventListener("click", function (e) {
-  nav.classList.toggle("active");
-  body.classList.toggle("overflow-hidden");
-  e.target.closest("#burger").classList.toggle("active");
-});
-/* close menu */
-
-document.addEventListener('click', function (e) {
-  if (nav.classList.contains('active')) {
-    // если у нав есть класс актив
-    var target = e.target;
-    var its_menu = target == nav; // место клика равно области нав
-
-    console.log("its_menu", its_menu);
-    var its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
-
-    console.log("its_hamburger", its_hamburger);
-    console.log(target);
-
-    if (!its_menu && !its_hamburger) {
-      console.log("!its_menu", !its_menu);
-      console.log("!its_hamburger", !its_hamburger);
-      closeMenu();
-    }
-  }
-});
 //# sourceMappingURL=main.js.map

@@ -500,17 +500,24 @@
 
 .catalog-tab__list {
   display: flex;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
   flex-wrap: wrap;
   justify-content: center; }
   @media (max-width: 767px) {
     .catalog-tab__list {
-      margin: 0 0 20px; } }
+      margin: 0 0 10px; } }
 
 .catalog-tab__item {
   width: calc(33.3% - 30px);
   min-width: 360px;
-  margin-right: 20px; }
+  margin-right: 20px;
+  margin-bottom: 20px; }
+  @media (max-width: 767px) {
+    .catalog-tab__item {
+      margin: 0 0 10px; } }
+  @media (max-width: 360px) {
+    .catalog-tab__item {
+      min-width: 300px; } }
   @media (max-width: 1400px) {
     .catalog-tab__item {
       width: calc(33.3% - 10px);
@@ -532,6 +539,9 @@
   padding: 40px 30px 35px;
   background-color: #F2F6F9;
   transition: box-shadow .2s ease-in-out; }
+  @media (max-width: 360px) {
+    .catalog-article {
+      padding: 20px 15px 15px; } }
   .catalog-article__title {
     font-weight: bold;
     font-size: 22px;
@@ -565,17 +575,12 @@
   @media (max-width: 1800px) {
     .article-footer__detail-btn {
       padding: 0; } }
+  .article-footer__detail-btn--back {
+    display: none; }
   .article-footer__detail-btn span {
     font-size: 20px; }
   .article-footer__detail-btn:hover {
     text-decoration: underline; }
-  .article-footer__detail-btn:hover span {
-    -webkit-animation-duration: .2s;
-    animation-duration: .2s;
-    -webkit-animation-name: arrowTransform;
-    animation-name: arrowTransform;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite; }
 
 .article-info {
   overflow: hidden; }
@@ -608,12 +613,15 @@
     line-height: 20px; }
 
 .swiper-container {
-  width: 300px;
+  width: 300px !important;
   padding-bottom: 60px;
   margin: 0; }
   @media (max-width: 1400px) {
     .swiper-container {
       width: auto; } }
+  @media (max-width: 360px) {
+    .swiper-container {
+      width: 290px !important; } }
 
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
   bottom: 35px; }
@@ -994,6 +1002,25 @@
   max-height: 560px;
   height: 560px;
   position: relative; }
+  .questions__map-logo {
+    margin-top: 5px;
+    max-width: 142px; }
+  .questions__map-text {
+    font-family: "Montserrat-Regular", sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 14px;
+    max-width: 270px; }
+
+.questions #map .ymaps-2-1-78-balloon__tail:after {
+  bottom: -140px;
+  left: auto;
+  right: -222px; }
+
+.questions #map .ymaps-2-1-78-balloon.ymaps-2-1-78-balloon_layout_normal {
+  max-width: 335px;
+  top: -80px !important;
+  left: -320px !important; }
 
 .questions__content {
   position: absolute;

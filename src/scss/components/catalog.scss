@@ -51,19 +51,27 @@
 .catalog-tab {
     &__list {
         display: flex;
-        margin: 0 0 40px;
+        margin: 0 0 20px;
         flex-wrap: wrap;
         justify-content: center;
 
         @include mobile {
-            margin: 0 0 20px;
+            margin: 0 0 10px;
         }
     }
     &__item {
         width: calc(33.3% - 30px);
         min-width: 360px;
         margin-right: 20px;
+        margin-bottom: 20px;
 
+        @include mobile {
+            margin: 0 0 10px;
+        }
+
+        @include mobile-ex-sm {
+            min-width: 300px;
+        }
 
         // + .catalog-tab__item {
         //     margin-left: 20px;
@@ -93,6 +101,10 @@
     padding: 40px 30px 35px;
     background-color: $catskillWhite;
     transition: box-shadow .2s ease-in-out;
+    @include mobile-ex-sm {
+        padding: 20px 15px 15px;
+    }
+
     &__title {
         font-weight: bold;
         font-size: 22px;
@@ -133,6 +145,9 @@
         @include desktop-xl {
             padding: 0;
         }
+        &--back {
+            display: none;  
+        }
         span {
             font-size: 20px;
         }
@@ -140,10 +155,10 @@
             text-decoration: underline;
         }
         &:hover span {
-            animation-duration: .2s;
+            // animation-duration: .2s;
             // animation-timing-function: ease-in-out;
-            animation-name: arrowTransform;
-            animation-iteration-count: infinite;
+            // animation-name: arrowTransform;
+            // animation-iteration-count: infinite;
         }
     }
 }
@@ -187,12 +202,16 @@
 
 // swiper
 .swiper-container {
-    width: 300px;
+    width: 300px !important;
     padding-bottom: 60px;
     margin: 0;
 
     @include desktop-md {
         width: auto;
+    }
+
+    @include mobile-ex-sm {
+        width: 290px !important;
     }
 }
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {

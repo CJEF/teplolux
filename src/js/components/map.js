@@ -17,7 +17,7 @@
 //       myMap.getCenter(),
 //       {
 //         hintContent: "значок метки",
-//         balloonContent: "Продажа кондиционеров и сплит систем в Караганде",
+//         balloonContent: `<img src="../img/logo.svg" class="questions__map-logo" alt="map image"><p class="questions__map-text">Продажа кондиционеров и сплит систем в Караганде</p>`,
 //       },
 //       {
 //         // Опции.
@@ -29,7 +29,7 @@
 //         iconImageSize: [34, 48],
 //         // Смещение левого верхнего угла иконки относительно
 //         // её "ножки" (точки привязки).
-//         // iconImageOffset: [0, -38],
+//         iconImageOffset: [-18, -55],
 //       }
 //     );
 
