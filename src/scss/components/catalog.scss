@@ -26,14 +26,15 @@
     }
 
     &__link {
+        font-family: "Montserrat-Medium", sans-serif;
+        font-weight: 500;
         padding: 10px 30px 13px;
         display: inline-flex;
         color: $black;
         border-radius: 50px;
         transition: color .2s ease-in-out, background-color .2s ease-in-out;
         &:hover {
-            color: #fff;
-            background-color: $blue;
+            color: $blue;
         }
 
         @include mobile {
@@ -108,7 +109,7 @@
         padding: 30px 15px 25px;
     }
     @include mobile-ex-sm {
-        padding: 20px 15px 15px;
+        padding: 20px 15px 25px;
     }
 
     &__title {
@@ -127,7 +128,7 @@
     }
     &__text {
         display: inline-block;
-        margin-bottom: 33px;
+        margin-bottom: 35px;
 
         @include mobile {
             font-size: 14px;
@@ -147,6 +148,15 @@
 }
 
 .article-footer {
+    &__price {
+        font-family: "Montserrat-Bold", sans-serif;
+        display: block;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
     &__btn {
         display: block;
         width: 100%;
@@ -204,11 +214,11 @@
         max-width: 300px;
         width: 100%;
         margin: 0 0 35px;
-        max-height: 244px;
+        max-height: 266px;
         overflow-y: auto;
     }
     &__item + &__item {
-        margin-top: 5px;
+        margin-top: 10px;
     }
     &__name {
         font-weight: normal;
@@ -240,7 +250,7 @@
 // swiper
 .swiper-container {
     // width: 330px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     margin: 0;
     width: auto;
 
@@ -248,7 +258,7 @@
     // }
 }
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: 35px;
+    bottom: 45px;
 }
 
 .slider-item {

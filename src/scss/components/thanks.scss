@@ -1,0 +1,26 @@
+.thanks {
+    &::before {
+        background-image: url(../img/thanks-bg.png);
+        background-position: 70% 235px;
+        // background-position-x: 60%;
+
+        @include mobile {
+            background-position: 50% 98%;
+            background-size: 80%;
+        }
+    }
+    @include mobile-ex-sm {
+        padding-bottom: 160px;
+    }
+    &__title {
+        margin: 0;
+    }
+    &__text {
+        margin: 0 0 65px;
+        font-family: "Montserrat-Medium", sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        max-width: 450px;
+    }
+}
