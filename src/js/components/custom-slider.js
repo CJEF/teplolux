@@ -7,7 +7,7 @@ function initSlider() {
   const slide = document.querySelectorAll(".article-info__slide");
   slide.forEach(elem => {
     elem.style.width = sliderWidth + 'px';
-    console.log(elem.style.width);
+    // console.log(elem.style.width);
   })
 }
 
@@ -35,7 +35,7 @@ detailBtn.forEach(btn => {
 
 window.addEventListener("resize", function() {
     initSlider();
-    console.log(123);
+    // console.log(123);
 })
 
 initSlider();

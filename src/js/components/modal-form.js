@@ -11,7 +11,7 @@ function openModal(e) {
     const target = e.target;
     const btnData = target.getAttribute('data-modal');
     let id = `#${btnData}`;
-    console.log(id);
+    // console.log(id);
     const modal = document.querySelector(id);
     const overlay = modal.closest(".modal-form__overlay");
     modal.classList.add("active");

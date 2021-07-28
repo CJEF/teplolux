@@ -232,26 +232,35 @@
           display: none; } }
     .header-info__phones {
       margin-left: 35px;
-      padding-left: 40px;
       position: relative; }
-      .header-info__phones::before {
-        content: url("../img/phone.svg");
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%); }
-        @media (max-width: 767px) {
-          .header-info__phones::before {
-            width: 25px;
-            height: 25px;
-            top: 35%; } }
       @media (max-width: 680px) {
         .header-info__phones {
-          margin-left: 0;
-          padding-left: 34px; } }
+          margin-left: 0; } }
       @media (max-width: 350px) {
         .header-info__phones {
           display: none; } }
+    .header-info__number {
+      position: relative;
+      padding-left: 40px; }
+      @media (max-width: 680px) {
+        .header-info__number {
+          padding-left: 34px; } }
+      .header-info__number::before {
+        content: url("../img/phone.svg");
+        position: absolute;
+        left: 0;
+        top: 25%; }
+        @media (max-width: 1225px) {
+          .header-info__number::before {
+            top: 50%;
+            transform: translateY(-50%); } }
+        @media (max-width: 767px) {
+          .header-info__number::before {
+            width: 25px;
+            height: 25px;
+            top: 35%; } }
+      .header-info__number:nth-child(2):before {
+        display: none; }
     .header-info__burger {
       display: none;
       position: relative;
@@ -405,17 +414,31 @@
       font-size: 16px;
       line-height: 18px; }
 
+.custom-checkbox__field:checked + .custom-checkbox__content::after {
+  opacity: 1; }
+
+.custom-checkbox__field:focus + .custom-checkbox__content::before {
+  outline: 2px solid #f00;
+  outline-offset: 2px; }
+
+.custom-checkbox__field:disabled + .custom-checkbox__content {
+  opacity: 0.4;
+  pointer-events: none; }
+
 .thanks::before {
   background-image: url(../img/thanks-bg.png);
-  background-position: 70% 235px; }
-  @media (max-width: 767px) {
+  background-position: 80% 235px; }
+  @media (max-width: 1400px) {
     .thanks::before {
-      background-position: 50% 98%;
-      background-size: 80%; } }
+      display: none; } }
 
-@media (max-width: 360px) {
+@media (max-width: 1400px) {
   .thanks {
-    padding-bottom: 160px; } }
+    padding-bottom: 30px; } }
+
+@media (max-width: 680px) {
+  .thanks .intro__description {
+    margin-bottom: 30px; } }
 
 .thanks__title {
   margin: 0; }
@@ -427,6 +450,18 @@
   font-size: 26px;
   line-height: 32px;
   max-width: 450px; }
+  @media (max-width: 680px) {
+    .thanks__text {
+      font-size: 22px;
+      line-height: 26px;
+      margin: 0 0 35px; } }
+
+.thanks__bg-img {
+  display: none; }
+  @media (max-width: 1400px) {
+    .thanks__bg-img {
+      display: block;
+      margin: 40px auto 0; } }
 
 .custom-checkbox__field:checked + .custom-checkbox__content::after {
   opacity: 1; }

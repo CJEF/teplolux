@@ -34,4 +34,17 @@ ymaps.ready(function () {
     );
 
   myMap.geoObjects.add(myPlacemark)
+
+  /* document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+      // const mapBaloon = document.querySelector(".ymaps-2-1-79-image");
+      // mapBaloon.click();
+      var balloon = new ymaps.Balloon(myMap);
+      balloon.open(myMap.getCenter());
+      // console.log(mapBaloon);
+    }, 3000);
+  }) */
+  // var balloon = new ymaps.Balloon(myMap);
+  // balloon.open();
 });
+

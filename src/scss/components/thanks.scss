@@ -1,16 +1,22 @@
+@import "../mixins";
+
 .thanks {
     &::before {
         background-image: url(../img/thanks-bg.png);
-        background-position: 70% 235px;
+        background-position: 80% 235px;
         // background-position-x: 60%;
 
-        @include mobile {
-            background-position: 50% 98%;
-            background-size: 80%;
+        @include desktop-md {
+            display: none;
         }
     }
-    @include mobile-ex-sm {
-        padding-bottom: 160px;
+    @include desktop-md {
+        padding-bottom: 30px;
+    }
+    .intro__description {
+        @include mobile-sm {
+            margin-bottom: 30px;
+        }
     }
     &__title {
         margin: 0;
@@ -22,5 +28,20 @@
         font-size: 26px;
         line-height: 32px;
         max-width: 450px;
+
+        @include mobile-sm {
+            font-size: 22px;
+            line-height: 26px;
+            margin: 0 0 35px;
+        }
+    }
+
+    &__bg-img {
+        display: none;
+
+        @include desktop-md {
+            display: block;
+            margin: 40px auto 0;
+        }   
     }
 }

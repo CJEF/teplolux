@@ -21,15 +21,15 @@ document.addEventListener('click', function (e) {
     // если у нав есть класс актив
     var target = e.target;
     var its_menu = target == nav; // место клика равно области нав
+    // console.log("its_menu", its_menu);
 
-    console.log("its_menu", its_menu);
     var its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
     // console.log("its_hamburger", its_hamburger);
     // console.log(target);
 
     if (!its_menu && !its_hamburger) {
-      console.log("!its_menu", !its_menu);
-      console.log("!its_hamburger", !its_hamburger);
+      // console.log("!its_menu", !its_menu);
+      // console.log("!its_hamburger", !its_hamburger);
       closeMenu();
     }
   }
@@ -45,8 +45,7 @@ function initSlider() {
 
   var slide = document.querySelectorAll(".article-info__slide");
   slide.forEach(function (elem) {
-    elem.style.width = sliderWidth + 'px';
-    console.log(elem.style.width);
+    elem.style.width = sliderWidth + 'px'; // console.log(elem.style.width);
   });
 }
 
@@ -70,8 +69,7 @@ detailBtn.forEach(function (btn) {
   });
 });
 window.addEventListener("resize", function () {
-  initSlider();
-  console.log(123);
+  initSlider(); // console.log(123);
 });
 initSlider();
 // console.log('');
@@ -103,6 +101,17 @@ ymaps.ready(function () {
     iconImageOffset: [-18, -55]
   });
   myMap.geoObjects.add(myPlacemark);
+  /* document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+      // const mapBaloon = document.querySelector(".ymaps-2-1-79-image");
+      // mapBaloon.click();
+      var balloon = new ymaps.Balloon(myMap);
+      balloon.open(myMap.getCenter());
+      // console.log(mapBaloon);
+    }, 3000);
+  }) */
+  // var balloon = new ymaps.Balloon(myMap);
+  // balloon.open();
 });
 "use strict";
 "use strict";
@@ -118,8 +127,8 @@ var body = document.querySelector('body');
 function openModal(e) {
   var target = e.target;
   var btnData = target.getAttribute('data-modal');
-  var id = "#".concat(btnData);
-  console.log(id);
+  var id = "#".concat(btnData); // console.log(id);
+
   var modal = document.querySelector(id);
   var overlay = modal.closest(".modal-form__overlay");
   modal.classList.add("active");

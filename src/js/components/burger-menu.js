@@ -19,15 +19,15 @@ document.addEventListener('click', function(e) {
     // если у нав есть класс актив
     let target = e.target;
     let its_menu = target == nav; // место клика равно области нав
-    console.log("its_menu", its_menu);
+    // console.log("its_menu", its_menu);
     let its_hamburger = target.closest("#burger") == burgerBtn; // место клика равно области бургера
     // console.log("its_hamburger", its_hamburger);
 
     // console.log(target);
 
     if (!its_menu && !its_hamburger) {
-      console.log("!its_menu", !its_menu);
-      console.log("!its_hamburger", !its_hamburger);
+      // console.log("!its_menu", !its_menu);
+      // console.log("!its_hamburger", !its_hamburger);
       closeMenu();
     }
   }
