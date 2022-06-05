@@ -1,3 +1,5 @@
+http://tsservice.kz/ site not working at moment ...
+
 # Gulp - сборка MaxGraph
 
 > Используется Gulp 4
