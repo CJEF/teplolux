@@ -1,4 +1,4 @@
-http://tsservice.kz/ site not working at moment ...
+https://tskaraganda.kz site final v link
 
 # Gulp - сборка MaxGraph
 
